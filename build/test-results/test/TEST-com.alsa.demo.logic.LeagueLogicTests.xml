@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.alsa.demo.logic.LeagueLogicTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-09T15:17:21" hostname="Alexs-MacBook-Pro.local" time="0.014">
+<testsuite name="com.alsa.demo.logic.LeagueLogicTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-09T16:11:09" hostname="Alexs-MacBook-Pro.local" time="0.023">
   <properties/>
-  <testcase name="updateLeaguePositionVariableGivenResultUpdate()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.014"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="updateLeagueGivenResultUpdate()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.023"/>
+  <system-out><![CDATA[teamID; 2 points; 41 position; 1
+teamID; 1 points; 40 position; 2
+teamID; 3 points; 38 position; 3
+teamID; 4 points; 36 position; 4
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
