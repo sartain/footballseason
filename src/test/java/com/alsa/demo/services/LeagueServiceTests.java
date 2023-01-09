@@ -21,4 +21,12 @@ public class LeagueServiceTests {
         assertEquals(expectedLeagueName, actualLeagueName);
     }
 
+    @Test
+    void saveLeague() {
+        String expectedLeagueName = "Premier League";
+        service.saveLeague(expectedLeagueName);
+        String actualLeagueName = service.getLeagueFromId(1).getName();
+        assertEquals(expectedLeagueName, actualLeagueName);
+    }
+
 }

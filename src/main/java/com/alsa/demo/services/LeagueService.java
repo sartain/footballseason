@@ -19,5 +19,6 @@ public class LeagueService {
         return dao.getReferenceById(id);
     }
 
+    public void saveLeague(String name) { dao.save(new League(name)); }
 
 }

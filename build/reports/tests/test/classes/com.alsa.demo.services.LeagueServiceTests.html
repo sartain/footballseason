@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">2</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.211s</div>
+<div class="counter">0.218s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,8 +78,13 @@
 </tr>
 </thead>
 <tr>
+<td class="success">saveLeague()</td>
+<td class="success">0.213s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">testGetTeamNameFromId()</td>
-<td class="success">0.211s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,14 +92,14 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>11:15:02.455 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [LeagueServiceTests]: using SpringBootContextLoader
-11:15:02.460 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.alsa.demo.services.LeagueServiceTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-11:15:02.461 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.alsa.demo.services.LeagueServiceTests]: LeagueServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-11:15:02.490 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [LeagueServiceTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, WebTestClientContextCustomizer]
-11:15:02.557 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/alsa/Downloads/footballseason/build/classes/java/main/com/alsa/demo/LeaguesApplication.class]
-11:15:02.558 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.services.LeagueServiceTests
-11:15:02.639 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [LeagueServiceTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
-11:15:02.641 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [LeagueServiceTests], class annotated with @DirtiesContext [false] with mode [null]
+<pre>11:37:28.449 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [LeagueServiceTests]: using SpringBootContextLoader
+11:37:28.454 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.alsa.demo.services.LeagueServiceTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+11:37:28.455 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.alsa.demo.services.LeagueServiceTests]: LeagueServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:37:28.487 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [LeagueServiceTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, WebTestClientContextCustomizer]
+11:37:28.566 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/alsa/Downloads/footballseason/build/classes/java/main/com/alsa/demo/LeaguesApplication.class]
+11:37:28.567 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.services.LeagueServiceTests
+11:37:28.663 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [LeagueServiceTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+11:37:28.665 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [LeagueServiceTests], class annotated with @DirtiesContext [false] with mode [null]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -104,21 +109,21 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.1)
 
-2023-01-09T11:15:02.870Z  INFO 23597 --- [    Test worker] c.alsa.demo.services.LeagueServiceTests  : Starting LeagueServiceTests using Java 17.0.3.1 with PID 23597 (started by alsa in /Users/alsa/Downloads/footballseason)
-2023-01-09T11:15:02.871Z  INFO 23597 --- [    Test worker] c.alsa.demo.services.LeagueServiceTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-01-09T11:15:03.377Z  INFO 23597 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-09T11:15:03.520Z  INFO 23597 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 135 ms. Found 2 JPA repository interfaces.
-2023-01-09T11:15:03.884Z  INFO 23597 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-09T11:15:04.062Z  INFO 23597 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:6d7bd6e7-e3de-4a8d-8b15-aa2dc1a50bb7 user=SA
-2023-01-09T11:15:04.063Z  INFO 23597 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-09T11:15:04.102Z  INFO 23597 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-09T11:15:04.153Z  INFO 23597 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
-2023-01-09T11:15:04.288Z  WARN 23597 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-2023-01-09T11:15:04.398Z  INFO 23597 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-01-09T11:15:05.078Z  INFO 23597 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-09T11:15:05.085Z  INFO 23597 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-09T11:15:05.454Z  WARN 23597 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-09T11:15:05.742Z  INFO 23597 --- [    Test worker] c.alsa.demo.services.LeagueServiceTests  : Started LeagueServiceTests in 3.067 seconds (process running for 4.106)
+2023-01-09T11:37:28.912Z  INFO 27337 --- [    Test worker] c.alsa.demo.services.LeagueServiceTests  : Starting LeagueServiceTests using Java 17.0.3.1 with PID 27337 (started by alsa in /Users/alsa/Downloads/footballseason)
+2023-01-09T11:37:28.913Z  INFO 27337 --- [    Test worker] c.alsa.demo.services.LeagueServiceTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-01-09T11:37:29.469Z  INFO 27337 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-09T11:37:29.659Z  INFO 27337 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 2 JPA repository interfaces.
+2023-01-09T11:37:30.064Z  INFO 27337 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-09T11:37:30.296Z  INFO 27337 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:75f4c98a-366a-4b91-a8b6-411f546c8916 user=SA
+2023-01-09T11:37:30.298Z  INFO 27337 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-09T11:37:30.346Z  INFO 27337 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-09T11:37:30.402Z  INFO 27337 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-09T11:37:30.585Z  WARN 27337 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-09T11:37:30.727Z  INFO 27337 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-09T11:37:31.349Z  INFO 27337 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-09T11:37:31.356Z  INFO 27337 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-09T11:37:31.799Z  WARN 27337 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-09T11:37:32.217Z  INFO 27337 --- [    Test worker] c.alsa.demo.services.LeagueServiceTests  : Started LeagueServiceTests in 3.513 seconds (process running for 4.721)
 </pre>
 </span>
 </div>
@@ -130,7 +135,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at 9 Jan 2023, 11:15:06</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at 9 Jan 2023, 11:37:32</p>
 </div>
 </div>
 </body>

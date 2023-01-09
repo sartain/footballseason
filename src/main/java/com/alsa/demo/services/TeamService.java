@@ -19,5 +19,9 @@ public class TeamService {
         return dao.getReferenceById(id);
     }
 
+    public void saveTeam(String name) {
+        dao.save(new Team(name));
+    }
+
 
 }

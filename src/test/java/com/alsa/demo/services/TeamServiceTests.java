@@ -21,4 +21,12 @@ public class TeamServiceTests {
         assertEquals(expectedTeamName, actualTeamName);
     }
 
+    @Test
+    void saveTeam() {
+        String expectedTeamName = "Everton";
+        service.saveTeam(expectedTeamName);
+        String actualTeamName = service.getTeamFromId(1).getName();
+        assertEquals(expectedTeamName, actualTeamName);
+    }
+
 }
