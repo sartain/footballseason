@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.alsa.demo.logic.LeagueLogicTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-01-09T16:41:09" hostname="Alexs-MacBook-Pro.local" time="0.031">
+<testsuite name="com.alsa.demo.logic.LeagueLogicTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-01-09T16:56:55" hostname="Alexs-MacBook-Pro.local" time="0.029">
   <properties/>
   <testcase name="updateLeaguePositionVariableGivenResultUpdate()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.015"/>
-  <testcase name="updateLeagueGivenResultUpdate()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.009"/>
-  <testcase name="updateLeaguePositionGivenResultUpdate()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.001"/>
-  <testcase name="updateLeaguePlacesGoalDifference()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.001"/>
+  <testcase name="updateLeagueGivenResultUpdate()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.008"/>
+  <testcase name="updateLeaguePlacesGoalDifference()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.002"/>
   <testcase name="updateSeveralLeaguePlaces()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.001"/>
   <system-out><![CDATA[teamID; 2 points; 41 position; 1
 teamID; 1 points; 40 position; 2

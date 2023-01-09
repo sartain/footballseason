@@ -17,19 +17,7 @@ public class LeagueLogic {
         return position;
     }
 
-    public LeaguePosition applyPositionUpdateMock(LeaguePosition position, List<LeaguePosition> positions) {
-        int newPosition = (int) (positions.stream().filter(e -> e.getPoints() > position.getPoints()).count() + 1);
-        position.setPosition(newPosition);
-        return position;
-    }
-
-    public List<LeaguePosition> applyLeagueUpdate(LeaguePosition position, List<LeaguePosition> positions) {
-        int currentPosition = position.getPosition();
-        LeaguePosition newPosition = applyPositionUpdateMock(position, positions);
-        int newPositionNumber = newPosition.getPosition();
-        if(currentPosition == newPositionNumber) {
-            return positions;
-        }
+    public List<LeaguePosition> applyLeagueUpdate(List<LeaguePosition> positions) {
         List<LeaguePosition> pos2 = positions.stream().sorted((e, f) -> f.compareTo(e)).collect(Collectors.toList());
         pos2.forEach(e -> e.setPosition(pos2.indexOf(e) + 1));
         return pos2;
