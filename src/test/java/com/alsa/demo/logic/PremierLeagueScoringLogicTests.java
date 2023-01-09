@@ -11,20 +11,20 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PremierLeagueLogicTests {
+public class PremierLeagueScoringLogicTests {
 
     /* ToDo:
-        -Win is 3 points to home team
-        -Goal difference applied to winning and losing teams
+        -Win is 3 points to home team = Done
+        -Goal difference applied to winning and losing teams = Done
         -Matches played incremented
-        -Draw is 1 point to both teams
-        -Lose is 3 points to away team
+        -Draw is 1 point to both teams = Done
+        -Lose is 3 points to away team = Done
         -Move above team, team moving above move below
         -Move below team, team moving below move above
         -Level points, better goal difference wins
      */
 
-    private PremierLeagueLogic logic;
+    private PremierLeagueScoringLogic logic;
     private List<LeaguePosition> position;
     private final int FIRST = 1;
     private final int SECOND = 2;
@@ -39,7 +39,7 @@ public class PremierLeagueLogicTests {
 
     @BeforeEach
     void before() {
-        logic = new PremierLeagueLogic();
+        logic = new PremierLeagueScoringLogic();
         position = new ArrayList<>();
         position.add(0, new LeaguePosition(1, 1, 1, 18, 40, 20, 19));
         position.add(1, new LeaguePosition(2, 1, 2, 18, 38, 18, 17));
@@ -95,12 +95,5 @@ public class PremierLeagueLogicTests {
         assertEquals(0, actualGoalsFor);
         assertEquals(4, actualGoalsAgainst);
     }
-
-    /*@Test
-    void pointsIncreaseForDraw() {
-        logic.increasePoints(position, new Result(THIRD, SECOND, 1, 1));
-        assertEquals(position.get(THIRD-1).getPoints() + 1, newPosition.get(THIRD-1).getPoints());
-        assertEquals(position.get(SECOND-1).getPoints() + 1, newPosition.get(THIRD-1).getPoints());
-    }*/
 
 }
