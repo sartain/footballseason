@@ -73,4 +73,21 @@ public class LeagueLogicTests {
         }
     }
 
+    @Test
+    void updateSeveralLeaguePlaces() {
+        LeaguePosition teamInSecond = positions.get(2);
+        int expectedLeaguePosition = teamInSecond.getPosition() - 1;
+        LeaguePosition position = logic.applyResultUpdate(teamInSecond, new ResultUpdate(THIRD, 3, 4, 1));
+        List<LeaguePosition> newPositions = logic.applyLeagueUpdate(position, positions);
+        newPositions.stream().forEach(e->System.out.println("teamID; " + e.getTeamId() + " points; " + e.getPoints() + " position; " + e.getPosition()));
+        for(LeaguePosition l : newPositions) {
+            if(l.getTeamId().equals(SECOND))
+                assertEquals(3, l.getPosition());
+            if(l.getTeamId().equals(FIRST))
+                assertEquals(2, l.getPosition());
+            if(l.getTeamId().equals(THIRD))
+                assertEquals(1, l.getPosition());
+        }
+    }
+
 }
