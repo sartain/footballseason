@@ -9,16 +9,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @Transactional
-public class TeamServiceTests {
+public class LeagueServiceTests {
 
     @Autowired
-    private TeamService service;
+    private LeagueService service;
 
     @Test
     void testGetTeamNameFromId() {
-        String expectedTeamName = "Everton";
-        String actualTeamName = service.getTeamFromId(1).getName();
-        assertEquals(expectedTeamName, actualTeamName);
+        String expectedLeagueName = "Premier League";
+        String actualLeagueName = service.getLeagueFromId(1).getName();
+        assertEquals(expectedLeagueName, actualLeagueName);
     }
 
 }

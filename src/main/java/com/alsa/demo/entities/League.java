@@ -1,27 +1,17 @@
 package com.alsa.demo.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
-@Table(name = "teams")
-public class Team {
+public class League {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-
-    public Team() {}
-
-    public Team(Integer id, String teamName) {
-        this.id = id;
-        this.name = teamName;
-    }
-
-    public Team(String teamName) {
-        this.name = teamName;
-    }
-
 
     public Integer getId() {
         return id;
@@ -38,5 +28,17 @@ public class Team {
     public void setName(String name) {
         this.name = name;
     }
-}
 
+    public League() {}
+
+    public League(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public League(String name) {
+        this.name = name;
+    }
+
+
+}
