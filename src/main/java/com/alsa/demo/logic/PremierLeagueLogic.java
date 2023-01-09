@@ -2,6 +2,7 @@ package com.alsa.demo.logic;
 
 import com.alsa.demo.entities.LeaguePosition;
 import com.alsa.demo.entities.Result;
+import com.alsa.demo.entities.ResultUpdate;
 
 import java.util.List;
 import java.util.Objects;
@@ -34,14 +35,21 @@ public class PremierLeagueLogic {
 
     public int[] scoreGame(int homeGoals, int awayGoals) {
         if(Objects.equals(homeGoals, awayGoals)) {
-            return new int[] {DRAW, DRAW, 0, 0};
+            return new int[] {DRAW, DRAW};
         }
         else if(homeGoals > awayGoals) {
-            return new int[] {WIN, LOSE, homeGoals, -homeGoals};
+            return new int[] {WIN, LOSE};
         }
         else {
-            return new int[] {LOSE, WIN, -awayGoals, awayGoals};
+            return new int[] {LOSE, WIN};
         }
+    }
+
+    public ResultUpdate[] scoreGame(Result result) {
+        int[] points = scoreGame(result.getHomeGoals(), result.getAwayGoals());
+        ResultUpdate homeUpdate = new ResultUpdate(result.getHomeTeamId(), points[0], result.getHomeGoals(), result.getAwayGoals());
+        ResultUpdate awayUpdate = new ResultUpdate(result.getAwayTeamId(), points[1], result.getAwayGoals(), result.getHomeGoals());
+        return new ResultUpdate[] {homeUpdate, awayUpdate};
     }
 
 }
