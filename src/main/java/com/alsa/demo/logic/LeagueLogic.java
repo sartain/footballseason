@@ -26,12 +26,11 @@ public class LeagueLogic {
     public List<LeaguePosition> applyLeagueUpdate(LeaguePosition position, List<LeaguePosition> positions) {
         int currentPosition = position.getPosition();
         LeaguePosition newPosition = applyPositionUpdateMock(position, positions);
-        //positions.set(positions.indexOf(newPosition), newPosition);
         int newPositionNumber = newPosition.getPosition();
         if(currentPosition == newPositionNumber) {
             return positions;
         }
-        List<LeaguePosition> pos2 = positions.stream().sorted((e, f) -> f.getPoints().compareTo(e.getPoints())).collect(Collectors.toList());
+        List<LeaguePosition> pos2 = positions.stream().sorted((e, f) -> f.compareTo(e)).collect(Collectors.toList());
         pos2.forEach(e -> e.setPosition(pos2.indexOf(e) + 1));
         return pos2;
     }
