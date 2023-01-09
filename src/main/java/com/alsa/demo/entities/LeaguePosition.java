@@ -10,6 +10,16 @@ public class LeaguePosition {
     private Integer goalsFor;
     private Integer goalsAgainst;
 
+    public LeaguePosition(Integer teamId, Integer leagueId, Integer position, Integer matchesPlayed, Integer points, Integer goalsFor, Integer goalsAgainst) {
+        this.teamId = teamId;
+        this.leagueId = leagueId;
+        this.position = position;
+        this.matchesPlayed = matchesPlayed;
+        this.points = points;
+        this.goalsFor = goalsFor;
+        this.goalsAgainst = goalsAgainst;
+    }
+
     public Integer getTeamId() {
         return teamId;
     }
@@ -63,16 +73,6 @@ public class LeaguePosition {
     }
 
     public void setGoalsAgainst(Integer goalsAgainst) {
-        this.goalsAgainst = goalsAgainst;
-    }
-
-    public LeaguePosition(Integer teamId, Integer leagueId, Integer position, Integer matchesPlayed, Integer points, Integer goalsFor, Integer goalsAgainst) {
-        this.teamId = teamId;
-        this.leagueId = leagueId;
-        this.position = position;
-        this.matchesPlayed = matchesPlayed;
-        this.points = points;
-        this.goalsFor = goalsFor;
         this.goalsAgainst = goalsAgainst;
     }
 

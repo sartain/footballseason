@@ -16,12 +16,8 @@ public class PremierLeagueScoringLogicTests {
     /* ToDo:
         -Win is 3 points to home team = Done
         -Goal difference applied to winning and losing teams = Done
-        -Matches played incremented
         -Draw is 1 point to both teams = Done
         -Lose is 3 points to away team = Done
-        -Move above team, team moving above move below
-        -Move below team, team moving below move above
-        -Level points, better goal difference wins
      */
 
     private PremierLeagueScoringLogic logic;
