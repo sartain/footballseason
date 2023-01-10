@@ -1,5 +1,6 @@
 package com.alsa.demo.logic;
 
+import com.alsa.demo.entities.Result;
 import com.alsa.demo.entities.Team;
 import com.alsa.demo.exceptions.TeamNotFoundException;
 
@@ -37,6 +38,16 @@ public class ResultLogic {
             return teamIdsWithName.get(0);
         else
             throw new TeamNotFoundException(teamName);
+    }
+
+    public static Result getResultGivenInput(String input, List<Team> teams) throws TeamNotFoundException {
+        String homeTeam = givenInputReturnHomeTeam(input);
+        int homeGoals = givenInputReturnHomeGoals(input);
+        int awayGoals = givenInputReturnAwayGoals(input);
+        String awayTeam = givenInputReturnAwayTeam(input);
+        int homeId = givenInputReturnTeamIdMock(homeTeam, teams);
+        int awayId = givenInputReturnTeamIdMock(awayTeam, teams);
+        return new Result(homeId, awayId, homeGoals, awayGoals);
     }
 
 }

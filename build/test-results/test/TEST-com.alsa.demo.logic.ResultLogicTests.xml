@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.alsa.demo.logic.ResultLogicTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-01-10T11:57:20" hostname="Alexs-MacBook-Pro.local" time="0.053">
+<testsuite name="com.alsa.demo.logic.ResultLogicTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-10T12:20:05" hostname="Alexs-MacBook-Pro.local" time="0.014">
   <properties/>
-  <testcase name="getTeamNotFoundErrorIfTeamNotAvailable()" classname="com.alsa.demo.logic.ResultLogicTests" time="0.029"/>
-  <testcase name="getMultiGoalsHomeTeam()" classname="com.alsa.demo.logic.ResultLogicTests" time="0.001"/>
-  <testcase name="getMultiNameAwayTeamName()" classname="com.alsa.demo.logic.ResultLogicTests" time="0.001"/>
-  <testcase name="getGoalsAwayTeam()" classname="com.alsa.demo.logic.ResultLogicTests" time="0.001"/>
-  <testcase name="getTeamIdFromName()" classname="com.alsa.demo.logic.ResultLogicTests" time="0.003"/>
-  <testcase name="getGoalsHomeTeam()" classname="com.alsa.demo.logic.ResultLogicTests" time="0.001"/>
-  <testcase name="getMultiNameHomeTeamName()" classname="com.alsa.demo.logic.ResultLogicTests" time="0.002"/>
-  <testcase name="getTeamNamesSingleTeamNames()" classname="com.alsa.demo.logic.ResultLogicTests" time="0.001"/>
-  <testcase name="getMultiGoalsAwayTeam()" classname="com.alsa.demo.logic.ResultLogicTests" time="0.001"/>
+  <testcase name="getResultFromMatch()" classname="com.alsa.demo.logic.ResultLogicTests" time="0.014"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

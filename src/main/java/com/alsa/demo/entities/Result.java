@@ -47,4 +47,17 @@ public class Result {
         this.awayGoals = awayGoals;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if(!o.getClass().equals(this.getClass()))
+            return false;
+        else {
+            Result r = (Result) o;
+            return r.getHomeTeamId().equals(this.getHomeTeamId()) &&
+                    r.getAwayTeamId().equals(this.getAwayTeamId()) &&
+                    r.getHomeGoals().equals(this.getHomeGoals()) &&
+                    r.getAwayGoals().equals(this.getAwayGoals());
+        }
+    }
+
 }

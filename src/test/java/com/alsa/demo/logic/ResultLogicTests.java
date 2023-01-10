@@ -92,4 +92,17 @@ public class ResultLogicTests {
         assertEquals(expectedMessage, e.getMessage());
     }
 
+    @Test
+    void getResultFromMatch() {
+        Result expectedResult = new Result(1, 3, 3, 0);
+        try {
+            Result actualResult = ResultLogic.getResultGivenInput(homeWin, teams);
+            assertEquals(expectedResult, actualResult);
+        }
+        catch(Exception e) {
+            fail();
+        }
+
+    }
+
 }
