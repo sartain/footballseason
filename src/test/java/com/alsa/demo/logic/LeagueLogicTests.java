@@ -12,13 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LeagueLogicTests {
     /* ToDo
-        -Increment Games Played
-        -Move above team, team moving above move below =
-        -Move below team, team moving below move above =
-        -Level points, better goal difference wins =
+        -Increment Games Played = Done
+        -Move above team, team moving above move below = Done
+        -Move below team, team moving below move above = Done
+        -Level points, better goal difference wins = Done
      */
 
-    private LeagueLogic logic;
     private List<LeaguePosition> positions;
     private final int FIRST = 1;
     private final int SECOND = 2;
@@ -27,7 +26,6 @@ public class LeagueLogicTests {
 
     @BeforeEach
     void before() {
-        logic = new LeagueLogic();
         positions = new ArrayList<>();
         positions.add(0, new LeaguePosition(1, 1, 1, 18, 40, 20, 19));
         positions.add(1, new LeaguePosition(2, 1, 2, 18, 38, 18, 17));
@@ -42,21 +40,19 @@ public class LeagueLogicTests {
         int expectedMatchPlayed = teamInFirst.getMatchesPlayed() + 1;
         int expectedGoalsFor = teamInFirst.getGoalsFor() + 4;
         int expectedGoalsAgainst = teamInFirst.getGoalsAgainst() + 1;
-        LeaguePosition position = logic.applyResultUpdate(teamInFirst, new ResultUpdate(FIRST, 3, 4, 1));
-        assertEquals(expectedPoints, position.getPoints());
-        assertEquals(expectedMatchPlayed, position.getMatchesPlayed());
-        assertEquals(expectedGoalsFor, position.getGoalsFor());
-        assertEquals(expectedGoalsAgainst, position.getGoalsAgainst());
+        LeagueLogic.applyResultUpdate(teamInFirst, new ResultUpdate(FIRST, 3, 4, 1));
+        assertEquals(expectedPoints, teamInFirst.getPoints());
+        assertEquals(expectedMatchPlayed, teamInFirst.getMatchesPlayed());
+        assertEquals(expectedGoalsFor, teamInFirst.getGoalsFor());
+        assertEquals(expectedGoalsAgainst, teamInFirst.getGoalsAgainst());
     }
 
     @Test
     void updateLeagueGivenResultUpdate() {
         LeaguePosition teamInSecond = positions.get(1);
-        int expectedLeaguePosition = teamInSecond.getPosition() - 1;
-        logic.applyResultUpdate(teamInSecond, new ResultUpdate(SECOND, 3, 4, 1));
-        List<LeaguePosition> newPositions = logic.applyLeagueUpdate(positions);
-        newPositions.stream().forEach(e->System.out.println("teamID; " + e.getTeamId() + " points; " + e.getPoints() + " position; " + e.getPosition()));
-        for(LeaguePosition l : newPositions) {
+        LeagueLogic.applyResultUpdate(teamInSecond, new ResultUpdate(SECOND, 3, 4, 1));
+        applyLeagueUpdate();
+        for(LeaguePosition l : positions) {
             if(l.getTeamId().equals(SECOND))
                 assertEquals(1, l.getPosition());
             if(l.getTeamId().equals(FIRST))
@@ -67,10 +63,9 @@ public class LeagueLogicTests {
     @Test
     void updateSeveralLeaguePlaces() {
         LeaguePosition teamInThird = positions.get(2);
-        logic.applyResultUpdate(teamInThird, new ResultUpdate(THIRD, 3, 4, 1));
-        List<LeaguePosition> newPositions = logic.applyLeagueUpdate(positions);
-        newPositions.stream().forEach(e->System.out.println("teamID; " + e.getTeamId() + " points; " + e.getPoints() + " position; " + e.getPosition()));
-        for(LeaguePosition l : newPositions) {
+        LeagueLogic.applyResultUpdate(teamInThird, new ResultUpdate(THIRD, 3, 4, 1));
+        applyLeagueUpdate();
+        for(LeaguePosition l : positions) {
             if(l.getTeamId().equals(SECOND))
                 assertEquals(3, l.getPosition());
             if(l.getTeamId().equals(FIRST))
@@ -84,12 +79,10 @@ public class LeagueLogicTests {
     void updateLeaguePlacesGoalDifference() {
         LeaguePosition teamInSecond = positions.get(1);
         LeaguePosition teamInThird = positions.get(2);
-        logic.applyResultUpdate(teamInSecond, new ResultUpdate(SECOND, 3, 4, 1));
-        logic.applyResultUpdate(teamInThird, new ResultUpdate(THIRD, 3, 25, 1));
-        List<LeaguePosition> newPositions = logic.applyLeagueUpdate(positions);
-        newPositions = logic.applyLeagueUpdate(newPositions);
-        newPositions.stream().forEach(e->System.out.println("teamID; " + e.getTeamId() + " points; " + e.getPoints() + " position; " + e.getPosition()));
-        for(LeaguePosition l : newPositions) {
+        LeagueLogic.applyResultUpdate(teamInSecond, new ResultUpdate(SECOND, 3, 4, 1));
+        LeagueLogic.applyResultUpdate(teamInThird, new ResultUpdate(THIRD, 3, 25, 1));
+        applyLeagueUpdate();
+        for(LeaguePosition l : positions) {
             if(l.getTeamId().equals(THIRD))
                 assertEquals(1, l.getPosition());
             if(l.getTeamId().equals(SECOND))
@@ -97,6 +90,11 @@ public class LeagueLogicTests {
             if(l.getTeamId().equals(FIRST))
                 assertEquals(3, l.getPosition());
         }
+    }
+
+    private void applyLeagueUpdate() {
+        LeagueLogic.applyLeagueUpdate(positions);
+        positions.forEach(System.out::println);
     }
 
 }

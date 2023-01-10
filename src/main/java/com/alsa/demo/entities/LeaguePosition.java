@@ -95,6 +95,12 @@ public class LeaguePosition {
         }
     }
 
-
+    @Override
+    public String toString() {
+        return String.format(
+                "Position: %d, TeamID: %s, GoalsFor: %d, GoalsAgainst: %d, Points: %d",
+                this.getPosition(), this.getTeamId(), this.getGoalsFor(), this.getGoalsAgainst(), this.getPoints()
+        );
+    }
 
 }
