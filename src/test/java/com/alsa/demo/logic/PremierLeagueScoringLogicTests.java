@@ -19,8 +19,6 @@ public class PremierLeagueScoringLogicTests {
         -Draw is 1 point to both teams = Done
         -Lose is 3 points to away team = Done
      */
-
-    private PremierLeagueScoringLogic logic;
     private List<LeaguePosition> position;
     private final int FIRST = 1;
     private final int SECOND = 2;
@@ -35,7 +33,6 @@ public class PremierLeagueScoringLogicTests {
 
     @BeforeEach
     void before() {
-        logic = new PremierLeagueScoringLogic();
         position = new ArrayList<>();
         position.add(0, new LeaguePosition(1, 1, 1, 18, 40, 20, 19));
         position.add(1, new LeaguePosition(2, 1, 2, 18, 38, 18, 17));
@@ -45,28 +42,28 @@ public class PremierLeagueScoringLogicTests {
 
     @Test
     void findWinnerHomeWin() {
-        int[] actualResult = logic.scoreGame(4, 0);
+        int[] actualResult = PremierLeagueScoringLogic.scoreGame(4, 0);
         assertEquals(3, actualResult[0]);
         assertEquals(0, actualResult[1]);
     }
 
     @Test
     void findWinnerAwayWin() {
-        int[] actualResult = logic.scoreGame(0, 4);
+        int[] actualResult = PremierLeagueScoringLogic.scoreGame(0, 4);
         assertEquals(0, actualResult[0]);
         assertEquals(3, actualResult[1]);
     }
 
     @Test
     void findDraw() {
-        int[] actualResult = logic.scoreGame(4, 4);
+        int[] actualResult = PremierLeagueScoringLogic.scoreGame(4, 4);
         assertEquals(1, actualResult[0]);
         assertEquals(1, actualResult[1]);
     }
 
     @Test
     void findLeagueUpdateForTeamOneGivenResult() {
-        ResultUpdate[] actualResultUpdate = logic.scoreGame(new Result(THIRD, SECOND, 4, 0));
+        ResultUpdate[] actualResultUpdate = PremierLeagueScoringLogic.scoreGame(new Result(THIRD, SECOND, 4, 0));
         ResultUpdate homeTeamResultUpdate = actualResultUpdate[0];
         int actualTeamId = homeTeamResultUpdate.getTeamId();
         int actualPoints = homeTeamResultUpdate.getPoints();
@@ -80,7 +77,7 @@ public class PremierLeagueScoringLogicTests {
 
     @Test
     void findLeagueUpdateForTeamTwoGivenResult() {
-        ResultUpdate[] actualResultUpdate = logic.scoreGame(new Result(THIRD, SECOND, 4, 0));
+        ResultUpdate[] actualResultUpdate = PremierLeagueScoringLogic.scoreGame(new Result(THIRD, SECOND, 4, 0));
         ResultUpdate awayTeamResultUpdate = actualResultUpdate[1];
         int actualTeamId = awayTeamResultUpdate.getTeamId();
         int actualPoints = awayTeamResultUpdate.getPoints();

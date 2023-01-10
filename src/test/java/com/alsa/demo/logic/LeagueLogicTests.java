@@ -1,6 +1,7 @@
 package com.alsa.demo.logic;
 
 import com.alsa.demo.entities.LeaguePosition;
+import com.alsa.demo.entities.Result;
 import com.alsa.demo.entities.ResultUpdate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,6 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LeagueLogicTests {
+
     /* ToDo
         -Increment Games Played = Done
         -Move above team, team moving above move below = Done
@@ -95,6 +97,24 @@ public class LeagueLogicTests {
     private void applyLeagueUpdate() {
         LeagueLogic.applyLeagueUpdate(positions);
         positions.forEach(System.out::println);
+    }
+
+    @Test
+    void updateLeaguePlacesGivenResultUpdateFromScoreLogic() {
+        LeaguePosition teamInFirst = positions.get(0);
+        LeaguePosition teamInSecond = positions.get(1);
+        ResultUpdate[] r = PremierLeagueScoringLogic.scoreGame(new Result(FIRST, SECOND, 4, 0));
+        LeagueLogic.applyResultUpdate(teamInFirst, r[0]);
+        LeagueLogic.applyResultUpdate(teamInSecond, r[1]);
+        applyLeagueUpdate();
+        for(LeaguePosition l : positions) {
+            if(l.getTeamId().equals(FIRST))
+                assertEquals(1, l.getPosition());
+            if(l.getTeamId().equals(THIRD))
+                assertEquals(2, l.getPosition());
+            if(l.getTeamId().equals(SECOND))
+                assertEquals(3, l.getPosition());
+        }
     }
 
 }

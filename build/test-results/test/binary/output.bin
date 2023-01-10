@@ -1,12 +1,4 @@
-CPosition: 2, TeamID: 1, GoalsFor: 20, GoalsAgainst: 19, Points: 40
-CPosition: 1, TeamID: 2, GoalsFor: 22, GoalsAgainst: 18, Points: 41
-CPosition: 3, TeamID: 3, GoalsFor: 16, GoalsAgainst: 16, Points: 38
-CPosition: 4, TeamID: 4, GoalsFor: 14, GoalsAgainst: 13, Points: 36
-CPosition: 3, TeamID: 1, GoalsFor: 20, GoalsAgainst: 19, Points: 40
-CPosition: 2, TeamID: 2, GoalsFor: 22, GoalsAgainst: 18, Points: 41
-CPosition: 1, TeamID: 3, GoalsFor: 41, GoalsAgainst: 17, Points: 41
-CPosition: 4, TeamID: 4, GoalsFor: 14, GoalsAgainst: 13, Points: 36
-CPosition: 2, TeamID: 1, GoalsFor: 20, GoalsAgainst: 19, Points: 40
-CPosition: 3, TeamID: 2, GoalsFor: 18, GoalsAgainst: 17, Points: 38
-CPosition: 1, TeamID: 3, GoalsFor: 20, GoalsAgainst: 17, Points: 41
-CPosition: 4, TeamID: 4, GoalsFor: 14, GoalsAgainst: 13, Points: 36
+CPosition: 1, TeamID: 1, GoalsFor: 24, GoalsAgainst: 19, Points: 43
+CPosition: 3, TeamID: 2, GoalsFor: 18, GoalsAgainst: 21, Points: 38
+CPosition: 2, TeamID: 3, GoalsFor: 16, GoalsAgainst: 16, Points: 38
+CPosition: 4, TeamID: 4, GoalsFor: 14, GoalsAgainst: 13, Points: 36

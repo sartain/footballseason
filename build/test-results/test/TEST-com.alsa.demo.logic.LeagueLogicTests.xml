@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.alsa.demo.logic.LeagueLogicTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-01-10T10:13:31" hostname="Alexs-MacBook-Pro.local" time="0.024">
+<testsuite name="com.alsa.demo.logic.LeagueLogicTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-10T10:19:56" hostname="Alexs-MacBook-Pro.local" time="0.021">
   <properties/>
-  <testcase name="updateLeaguePositionVariableGivenResultUpdate()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.014"/>
-  <testcase name="updateLeagueGivenResultUpdate()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.004"/>
-  <testcase name="updateLeaguePlacesGoalDifference()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.001"/>
-  <testcase name="updateSeveralLeaguePlaces()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.002"/>
-  <system-out><![CDATA[Position: 2, TeamID: 1, GoalsFor: 20, GoalsAgainst: 19, Points: 40
-Position: 1, TeamID: 2, GoalsFor: 22, GoalsAgainst: 18, Points: 41
-Position: 3, TeamID: 3, GoalsFor: 16, GoalsAgainst: 16, Points: 38
-Position: 4, TeamID: 4, GoalsFor: 14, GoalsAgainst: 13, Points: 36
-Position: 3, TeamID: 1, GoalsFor: 20, GoalsAgainst: 19, Points: 40
-Position: 2, TeamID: 2, GoalsFor: 22, GoalsAgainst: 18, Points: 41
-Position: 1, TeamID: 3, GoalsFor: 41, GoalsAgainst: 17, Points: 41
-Position: 4, TeamID: 4, GoalsFor: 14, GoalsAgainst: 13, Points: 36
-Position: 2, TeamID: 1, GoalsFor: 20, GoalsAgainst: 19, Points: 40
-Position: 3, TeamID: 2, GoalsFor: 18, GoalsAgainst: 17, Points: 38
-Position: 1, TeamID: 3, GoalsFor: 20, GoalsAgainst: 17, Points: 41
+  <testcase name="updateLeaguePlacesGivenResultUpdateFromScoreLogic()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.021"/>
+  <system-out><![CDATA[Position: 1, TeamID: 1, GoalsFor: 24, GoalsAgainst: 19, Points: 43
+Position: 3, TeamID: 2, GoalsFor: 18, GoalsAgainst: 21, Points: 38
+Position: 2, TeamID: 3, GoalsFor: 16, GoalsAgainst: 16, Points: 38
 Position: 4, TeamID: 4, GoalsFor: 14, GoalsAgainst: 13, Points: 36
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
