@@ -17,8 +17,8 @@ public class LeaguePositionServiceTests {
 
     @Test
     void getPositionOfTeamInLeague() {
-        //Grab "Everton" from "Premier League"
-        int actualPosition = service.getLeaguePositionGivenTeamInLeague(1, 1).getPosition();
+        //Arsenal of ID 2 are first
+        int actualPosition = service.getLeaguePositionGivenTeamInLeague(2, 1).getPosition();
         assertEquals(1, actualPosition);
     }
 
