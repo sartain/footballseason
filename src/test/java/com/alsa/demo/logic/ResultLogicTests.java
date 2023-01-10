@@ -9,7 +9,7 @@ public class ResultLogicTests {
 
     private final String homeWin = "Everton 3-0 Liverpool";
     private final String draw = "Tottenham 1-1 Arsenal";
-    private final String multiName = "Manchester United 2-1 Manchester City";
+    private final String multiName = "Manchester United 2-1 Manchester City Women";
     private final String multiScore = "Vision Express 20-20 Specsavers";
 
 
@@ -23,6 +23,8 @@ public class ResultLogicTests {
 
     @Test
     void getMultiNameTeamName() {
+        String homeName = ResultLogic.givenInputReturnHomeTeam(multiName);
+        assertEquals("Manchester United", homeName);
     }
 
 }
