@@ -11,6 +11,9 @@ public class League {
     private Integer id;
     private String name;
 
+    @ManyToOne
+    private LeaguePosition position;
+
     public Integer getId() {
         return id;
     }

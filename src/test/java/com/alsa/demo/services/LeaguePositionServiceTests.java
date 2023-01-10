@@ -12,4 +12,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LeaguePositionServiceTests {
 
 
+    @Autowired
+    private LeaguePositionService service;
+
+    @Test
+    void getPositionOfTeamInLeague() {
+        //Grab "Everton" from "Premier League"
+        int actualPosition = service.getLeaguePositionGivenTeamInLeague(1, 1).getPosition();
+        assertEquals(1, actualPosition);
+    }
+
+
 }

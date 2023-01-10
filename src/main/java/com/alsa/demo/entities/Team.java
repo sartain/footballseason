@@ -11,6 +11,9 @@ public class Team {
     private Integer id;
     private String name;
 
+    @OneToOne
+    private LeaguePosition position;
+
     public Team() {}
 
     public Team(Integer id, String teamName) {

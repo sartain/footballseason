@@ -2,15 +2,26 @@ package com.alsa.demo.entities;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "leaguepositions")
+@IdClass(LeaguePositionId.class)
 public class LeaguePosition {
 
+    @Id
+    @OneToOne
+    @JoinColumn(name = "teamId", referencedColumnName = "id")
     private Team team;
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "leagueId", referencedColumnName = "id")
     private League league;
     private Integer position;
     private Integer matchesPlayed;
     private Integer points;
     private Integer goalsFor;
     private Integer goalsAgainst;
+
+    public LeaguePosition() {}
 
     public LeaguePosition(Team team, League league, Integer position, Integer matchesPlayed, Integer points, Integer goalsFor, Integer goalsAgainst) {
         this.team = team;
