@@ -1,18 +1,30 @@
 package com.alsa.demo.entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "leaguepositions", uniqueConstraints = {@UniqueConstraint(columnNames = {"teamId", "leagueId", "position"})})
+@IdClass(LeaguePositionID.class)
 public class LeaguePosition {
 
-    private Integer teamId;
-    private Integer leagueId;
+    @Id
+    @OneToOne
+    @JoinColumn(name = "team.id")
+    private Team team;
+    @Id
+    @OneToMany
+    @JoinColumn(name = "league.id")
+    private League league;
+    @Id
     private Integer position;
     private Integer matchesPlayed;
     private Integer points;
     private Integer goalsFor;
     private Integer goalsAgainst;
 
-    public LeaguePosition(Integer teamId, Integer leagueId, Integer position, Integer matchesPlayed, Integer points, Integer goalsFor, Integer goalsAgainst) {
-        this.teamId = teamId;
-        this.leagueId = leagueId;
+    public LeaguePosition(Team team, League league, Integer position, Integer matchesPlayed, Integer points, Integer goalsFor, Integer goalsAgainst) {
+        this.team = team;
+        this.league = league;
         this.position = position;
         this.matchesPlayed = matchesPlayed;
         this.points = points;
@@ -20,20 +32,30 @@ public class LeaguePosition {
         this.goalsAgainst = goalsAgainst;
     }
 
-    public Integer getTeamId() {
-        return teamId;
+    public LeaguePosition(int teamId, int leagueId, Integer position, Integer matchesPlayed, Integer points, Integer goalsFor, Integer goalsAgainst) {
+        this.team = new Team(teamId, "example");
+        this.league = new League(leagueId, "example");
+        this.position = position;
+        this.matchesPlayed = matchesPlayed;
+        this.points = points;
+        this.goalsFor = goalsFor;
+        this.goalsAgainst = goalsAgainst;
     }
 
-    public void setTeamId(Integer teamId) {
-        this.teamId = teamId;
+    public Team getTeamId() {
+        return team;
     }
 
-    public Integer getLeagueId() {
-        return leagueId;
+    public void setTeamId(Team team) {
+        this.team = team;
     }
 
-    public void setLeagueId(Integer leagueId) {
-        this.leagueId = leagueId;
+    public League getLeagueId() {
+        return league;
+    }
+
+    public void setLeagueId(League leagueId) {
+        this.league = leagueId;
     }
 
     public Integer getPosition() {
