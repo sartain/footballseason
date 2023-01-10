@@ -2,20 +2,10 @@ package com.alsa.demo.entities;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "leaguepositions", uniqueConstraints = {@UniqueConstraint(columnNames = {"teamId", "leagueId", "position"})})
-@IdClass(LeaguePositionID.class)
 public class LeaguePosition {
 
-    @Id
-    @OneToOne
-    @JoinColumn(name = "team.id")
     private Team team;
-    @Id
-    @OneToMany
-    @JoinColumn(name = "league.id")
     private League league;
-    @Id
     private Integer position;
     private Integer matchesPlayed;
     private Integer points;

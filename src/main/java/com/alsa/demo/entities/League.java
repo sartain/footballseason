@@ -3,13 +3,11 @@ package com.alsa.demo.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "leagues", uniqueConstraints = {@UniqueConstraint(columnNames = {"id"})})
+@Table(name = "leagues")
 public class League {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @OneToOne
-    @JoinColumn(name = "leaguepositions.leagueId")
     private Integer id;
     private String name;
 
