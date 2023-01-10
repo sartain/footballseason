@@ -1,11 +1,9 @@
 package com.alsa.demo.logic;
 
-import com.alsa.demo.entities.Result;
 import com.alsa.demo.entities.Team;
+import com.alsa.demo.exceptions.TeamNotFoundException;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ResultLogic {
 
@@ -33,12 +31,12 @@ public class ResultLogic {
         return Integer.parseInt(homeGoals.strip());
     }
 
-    public static int givenInputReturnTeamIdMock(String teamName, List<Team> teams) {
+    public static int givenInputReturnTeamIdMock(String teamName, List<Team> teams) throws TeamNotFoundException {
         List<Integer> teamIdsWithName = teams.stream().filter(e -> e.getName().equals(teamName)).map(Team::getId).toList();
         if(teamIdsWithName.size() > 0)
             return teamIdsWithName.get(0);
         else
-            return -1;
+            throw new TeamNotFoundException(teamName);
     }
 
 }

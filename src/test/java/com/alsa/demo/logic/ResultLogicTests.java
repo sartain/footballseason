@@ -2,12 +2,13 @@ package com.alsa.demo.logic;
 
 import com.alsa.demo.entities.Result;
 import com.alsa.demo.entities.Team;
+import com.alsa.demo.exceptions.TeamNotFoundException;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ResultLogicTests {
 
@@ -74,8 +75,21 @@ public class ResultLogicTests {
     void getTeamIdFromName() {
         String teamName = ResultLogic.givenInputReturnAwayTeam(multiName);
         assertEquals("Manchester City Women", teamName);
-        int teamId = ResultLogic.givenInputReturnTeamIdMock(teamName, teams);
-        assertEquals(2, teamId);
+        try {
+            int teamId = ResultLogic.givenInputReturnTeamIdMock(teamName, teams);
+            assertEquals(2, teamId);
+        }
+        catch (TeamNotFoundException e) {
+            fail();
+        }
+    }
+
+    @Test
+    void getTeamNotFoundErrorIfTeamNotAvailable() {
+        String inputtedName = "Swansea City";
+        String expectedMessage = String.format("No Team Found of name: %s", inputtedName);
+        Exception e = assertThrows(TeamNotFoundException.class, () -> ResultLogic.givenInputReturnTeamIdMock(inputtedName, teams));
+        assertEquals(expectedMessage, e.getMessage());
     }
 
 }
