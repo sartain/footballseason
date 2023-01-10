@@ -76,7 +76,7 @@ public class ResultLogicTests {
         String teamName = ResultLogic.givenInputReturnAwayTeam(multiName);
         assertEquals("Manchester City Women", teamName);
         try {
-            int teamId = ResultLogic.givenInputReturnTeamIdMock(teamName, teams);
+            int teamId = ResultLogic.givenInputReturnTeamId(teamName, teams);
             assertEquals(2, teamId);
         }
         catch (TeamNotFoundException e) {
@@ -88,7 +88,7 @@ public class ResultLogicTests {
     void getTeamNotFoundErrorIfTeamNotAvailable() {
         String inputtedName = "Swansea City";
         String expectedMessage = String.format("No Team Found of name: %s", inputtedName);
-        Exception e = assertThrows(TeamNotFoundException.class, () -> ResultLogic.givenInputReturnTeamIdMock(inputtedName, teams));
+        Exception e = assertThrows(TeamNotFoundException.class, () -> ResultLogic.givenInputReturnTeamId(inputtedName, teams));
         assertEquals(expectedMessage, e.getMessage());
     }
 
@@ -96,11 +96,11 @@ public class ResultLogicTests {
     void getResultFromMatch() {
         Result expectedResult = new Result(1, 3, 3, 0);
         try {
-            Result actualResult = ResultLogic.getResultGivenInput(homeWin, teams);
+            Result actualResult = ResultLogic.givenInputReturnResult(homeWin, teams);
             assertEquals(expectedResult, actualResult);
         }
         catch(Exception e) {
-            fail();
+            fail(e.getMessage());
         }
 
     }
