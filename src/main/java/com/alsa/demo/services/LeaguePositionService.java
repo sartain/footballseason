@@ -4,11 +4,14 @@ import com.alsa.demo.entities.League;
 import com.alsa.demo.entities.LeaguePosition;
 import com.alsa.demo.entities.LeaguePositionId;
 import com.alsa.demo.entities.Team;
+import com.alsa.demo.logic.LeagueLogic;
 import com.alsa.demo.repositories.LeagueDao;
 import com.alsa.demo.repositories.LeaguePositionDao;
 import com.alsa.demo.repositories.TeamDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class LeaguePositionService {
@@ -32,6 +35,11 @@ public class LeaguePositionService {
         Team t = teamDao.getReferenceById(teamId);
         League l = leagueDao.getReferenceById(leagueId);
         return leaguePositionDao.getReferenceById(new LeaguePositionId(t, l));
+    }
+
+
+    public List<LeaguePosition> getLeagueTable(int id) {
+        return LeagueLogic.applyLeagueUpdate(leaguePositionDao.findAllByLeagueId(id));
     }
 
 }
