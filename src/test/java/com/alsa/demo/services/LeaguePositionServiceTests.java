@@ -25,9 +25,16 @@ public class LeaguePositionServiceTests {
     }
 
     @Test
-    void getPositionOfTeamInLeague() {
+    void getPositionOfTeamInLeagueViaId() {
         //Arsenal of ID 2 are first
-        int actualPosition = service.getLeaguePositionGivenTeamInLeague(2, 1).getPosition();
+        int actualPosition = service.getLeaguePositionGivenTeamAndLeagueId(2, 1).getPosition();
+        assertEquals(1, actualPosition);
+    }
+
+    @Test
+    void getPositionOfTeamInLeagueViaTeamAndLeagueName() {
+        //Arsenal of ID 2 are first
+        int actualPosition = service.getLeaguePositionGivenTeamInLeague("Arsenal", "Premier League").getPosition();
         assertEquals(1, actualPosition);
     }
 

@@ -31,12 +31,17 @@ public class LeaguePositionService {
         this.teamDao = teamDao;
     }
 
-    public LeaguePosition getLeaguePositionGivenTeamInLeague(int teamId, int leagueId) {
+    public LeaguePosition getLeaguePositionGivenTeamAndLeagueId(int teamId, int leagueId) {
         Team t = teamDao.getReferenceById(teamId);
         League l = leagueDao.getReferenceById(leagueId);
         return leaguePositionDao.getReferenceById(new LeaguePositionId(t, l));
     }
 
+    public LeaguePosition getLeaguePositionGivenTeamInLeague(String teamName, String leagueName) {
+        Team t = teamDao.getReferenceByName(teamName);
+        League l = leagueDao.getReferenceByName(leagueName);
+        return leaguePositionDao.getReferenceById(new LeaguePositionId(t, l));
+    }
 
     public List<LeaguePosition> getLeagueTable(int id) {
         return LeagueLogic.applyLeagueUpdate(leaguePositionDao.findAllByLeagueId(id));
