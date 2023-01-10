@@ -22,9 +22,15 @@ public class ResultLogicTests {
     }
 
     @Test
-    void getMultiNameTeamName() {
+    void getMultiNameHomeTeamName() {
         String homeName = ResultLogic.givenInputReturnHomeTeam(multiName);
         assertEquals("Manchester United", homeName);
+    }
+
+    @Test
+    void getMultiNameAwayTeamName() {
+        String homeName = ResultLogic.givenInputReturnAwayTeam(multiName);
+        assertEquals("Manchester City Women", homeName);
     }
 
 }
