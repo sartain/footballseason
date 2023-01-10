@@ -25,6 +25,7 @@ public class AppInit implements CommandLineRunner {
     @Override
     public void run(String... args) {
         teamDao.save(new Team("Everton"));
+        teamDao.save(new Team("Liverpool"));
         leagueDao.save(new League("Premier League"));
         leaguePositionDao.save(new LeaguePosition(teamDao.getReferenceById(1),
                 leagueDao.getReferenceById(1),
@@ -32,5 +33,11 @@ public class AppInit implements CommandLineRunner {
                 19,
                 50,
                 43,21));
+        leaguePositionDao.save(new LeaguePosition(teamDao.getReferenceById(2),
+                leagueDao.getReferenceById(1),
+                2,
+                19,
+                48,
+                30,25));
     }
 }
