@@ -38,5 +38,21 @@ public class LeaguePositionServiceTests {
         assertEquals(1, actualPosition);
     }
 
+    @Test
+    void applyScoreUpdate() {
+        //Get previous positions
+        int previousPositionManchesterUnited = service.getLeaguePositionGivenTeamInLeague("Manchester United", "Premier League").getPosition();
+        int previousPositionNewcastleUnited = service.getLeaguePositionGivenTeamInLeague("Newcastle United", "Premier League").getPosition();
+        assertEquals(3, previousPositionNewcastleUnited);
+        assertEquals(4, previousPositionManchesterUnited);
+        //Expectation is that Manchester overtake Newcastle
+        //Apply update
+        service.applyLeagueTableUpdateGivenScore("Manchester United 2-0 Newcastle United");
+        //Check values
+        int actualPositionManchesterUnited = service.getLeaguePositionGivenTeamInLeague("Manchester United", "Premier League").getPosition();
+        int actualPositionNewcastleUnited = service.getLeaguePositionGivenTeamInLeague("Newcastle United", "Premier League").getPosition();
+        assertEquals(previousPositionManchesterUnited, actualPositionNewcastleUnited);
+        assertEquals(previousPositionNewcastleUnited, actualPositionManchesterUnited);
+    }
 
 }
