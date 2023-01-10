@@ -33,4 +33,28 @@ public class ResultLogicTests {
         assertEquals("Manchester City Women", homeName);
     }
 
+    @Test
+    void getGoalsHomeTeam() {
+        int actualGoals = ResultLogic.givenInputReturnHomeGoals(homeWin);
+        assertEquals(3, actualGoals);
+    }
+
+    @Test
+    void getMultiGoalsHomeTeam() {
+        int actualGoals = ResultLogic.givenInputReturnHomeGoals(multiScore);
+        assertEquals(20, actualGoals);
+    }
+
+    @Test
+    void getGoalsAwayTeam() {
+        int actualGoals = ResultLogic.givenInputReturnAwayGoals(draw);
+        assertEquals(1, actualGoals);
+    }
+
+    @Test
+    void getMultiGoalsAwayTeam() {
+        int actualGoals = ResultLogic.givenInputReturnAwayGoals(multiScore);
+        assertEquals(20, actualGoals);
+    }
+
 }
