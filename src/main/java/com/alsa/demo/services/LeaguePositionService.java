@@ -54,6 +54,14 @@ public class LeaguePositionService {
         return LeagueLogic.applyLeagueUpdate(leaguePositionDao.findAllByLeagueId(id));
     }
 
+    public Optional<List<LeaguePosition>> getLeagueTableGivenName(String leagueName) throws LeagueNotFoundException {
+        Optional<League> l = leagueDao.findByName(leagueName);
+        if(l.isEmpty())
+            throw new LeagueNotFoundException(leagueName);
+        else
+            return Optional.of(LeagueLogic.applyLeagueUpdate(leaguePositionDao.findAllByLeagueId(l.get().getId())));
+    }
+
     public void applyLeagueTableUpdateGivenScore(String input) {
         //Assumption is that this is premier league
         //Slightly inefficient as all teams in all positions are modified, not just ones referenced
