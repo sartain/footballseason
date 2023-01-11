@@ -55,4 +55,26 @@ public class LeaguePositionIntegrationTests {
         List<LeaguePosition> leaguePositions = Arrays.asList(response.getBody());
         leaguePositions.forEach(e-> assertEquals(e.getPosition(), leaguePositions.indexOf(e) + 1));
     }
+
+    @Test
+    public void updateLeagueTable() {
+        ResponseEntity<LeaguePosition[]> response = restTemplate.getForEntity("/leagueposition/Premier League", LeaguePosition[].class);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
+        List<LeaguePosition> leaguePositions = Arrays.asList(response.getBody());
+        assertEquals("Manchester United", leaguePositions.get(3).getTeam().getName());
+        assertEquals(4, leaguePositions.get(3).getPosition());
+        assertEquals("Newcastle United", leaguePositions.get(2).getTeam().getName());
+        assertEquals(3, leaguePositions.get(2).getPosition());
+        //Make update
+        restTemplate.postForEntity("/leagueposition/Premier League", "Manchester United 2-0 Newcastle United", String.class);
+        response = restTemplate.getForEntity("/leagueposition/Premier League", LeaguePosition[].class);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
+        leaguePositions = Arrays.asList(response.getBody());
+        assertEquals("Manchester United", leaguePositions.get(2).getTeam().getName());
+        assertEquals(3, leaguePositions.get(2).getPosition());
+        assertEquals("Newcastle United", leaguePositions.get(3).getTeam().getName());
+        assertEquals(4, leaguePositions.get(3).getPosition());
+    }
 }
