@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LeagueDao extends JpaRepository<League, Integer> {
 
-    public League getReferenceByName(String name);
+    public League findByName(String name);
 
 }

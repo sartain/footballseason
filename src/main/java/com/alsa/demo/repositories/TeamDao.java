@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TeamDao extends JpaRepository<Team, Integer> {
 
-    public Team getReferenceByName(String name);
+    public Team findByName(String name);
 
 }

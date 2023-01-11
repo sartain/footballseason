@@ -2,7 +2,7 @@ package com.alsa.demo.entities;
 
 import java.io.Serializable;
 
-public class LeaguePositionId implements Serializable {
+public class LeaguePositionId {
 
     public LeaguePositionId(Team team, League league) {
         this.team = team;

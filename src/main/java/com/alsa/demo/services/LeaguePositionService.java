@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class LeaguePositionService {
@@ -32,15 +31,15 @@ public class LeaguePositionService {
     }
 
     public LeaguePosition getLeaguePositionGivenTeamAndLeagueId(int teamId, int leagueId) {
-        Team t = teamDao.getReferenceById(teamId);
-        League l = leagueDao.getReferenceById(leagueId);
-        return leaguePositionDao.getReferenceById(new LeaguePositionId(t, l));
+        Team t = teamDao.findById(teamId).get();
+        League l = leagueDao.findById(leagueId).get();
+        return leaguePositionDao.findById(new LeaguePositionId(t, l)).get();
     }
 
     public LeaguePosition getLeaguePositionGivenTeamInLeague(String teamName, String leagueName) {
-        Team t = teamDao.getReferenceByName(teamName);
-        League l = leagueDao.getReferenceByName(leagueName);
-        return leaguePositionDao.getReferenceById(new LeaguePositionId(t, l));
+        Team t = teamDao.findByName(teamName);
+        League l = leagueDao.findByName(leagueName);
+        return leaguePositionDao.findById(new LeaguePositionId(t, l)).get();
     }
 
     public List<LeaguePosition> getLeagueTable(int id) {
@@ -49,6 +48,7 @@ public class LeaguePositionService {
 
     public void applyLeagueTableUpdateGivenScore(String input) {
         //Assumption is that this is premier league
+        //Slightly inefficient as all teams in all positions are modified, not just ones referenced
         List<LeaguePosition> leaguePositions = getLeagueTable(1);
         List<Team> positions = leaguePositions.stream().map(LeaguePosition::getTeamId).toList();
         try {
@@ -57,7 +57,6 @@ public class LeaguePositionService {
             LeagueLogic.applyResultUpdate(leaguePositions.stream().filter(e -> e.getTeamId().getId().equals(r[1].getTeamId())).toList().get(0), r[1]);
             LeagueLogic.applyLeagueUpdate(leaguePositions);
             for(LeaguePosition p : leaguePositions) {
-                System.out.println(p);
                 leaguePositionDao.save(p);
             }
         }
