@@ -58,11 +58,11 @@ public class LeaguePositionService {
         //Assumption is that this is premier league
         //Slightly inefficient as all teams in all positions are modified, not just ones referenced
         List<LeaguePosition> leaguePositions = getLeagueTable(1);
-        List<Team> positions = leaguePositions.stream().map(LeaguePosition::getTeamId).toList();
+        List<Team> positions = leaguePositions.stream().map(LeaguePosition::getTeam).toList();
         try {
             ResultUpdate[] r = PremierLeagueScoringLogic.scoreGame(ResultLogic.givenInputReturnResult(input, positions));
-            LeagueLogic.applyResultUpdate(leaguePositions.stream().filter(e -> e.getTeamId().getId().equals(r[0].getTeamId())).toList().get(0), r[0]);
-            LeagueLogic.applyResultUpdate(leaguePositions.stream().filter(e -> e.getTeamId().getId().equals(r[1].getTeamId())).toList().get(0), r[1]);
+            LeagueLogic.applyResultUpdate(leaguePositions.stream().filter(e -> e.getTeam().getId().equals(r[0].getTeamId())).toList().get(0), r[0]);
+            LeagueLogic.applyResultUpdate(leaguePositions.stream().filter(e -> e.getTeam().getId().equals(r[1].getTeamId())).toList().get(0), r[1]);
             LeagueLogic.applyLeagueUpdate(leaguePositions);
             for(LeaguePosition p : leaguePositions) {
                 leaguePositionDao.save(p);

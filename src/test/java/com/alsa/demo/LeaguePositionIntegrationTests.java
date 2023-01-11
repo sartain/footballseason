@@ -23,7 +23,7 @@ public class LeaguePositionIntegrationTests {
         ResponseEntity<LeaguePosition> response = restTemplate.getForEntity("/leagueposition/Premier League/Everton", LeaguePosition.class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
-        String teamName = response.getBody().getTeamId().getName();
+        String teamName = response.getBody().getTeam().getName();
         assertEquals("Everton", teamName);
         System.out.println(teamName);
     }

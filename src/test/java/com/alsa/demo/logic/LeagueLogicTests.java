@@ -55,9 +55,9 @@ public class LeagueLogicTests {
         LeagueLogic.applyResultUpdate(teamInSecond, new ResultUpdate(SECOND, 3, 4, 1));
         applyLeagueUpdate();
         for(LeaguePosition l : positions) {
-            if(l.getTeamId().equals(SECOND))
+            if(l.getTeam().equals(SECOND))
                 assertEquals(1, l.getPosition());
-            if(l.getTeamId().equals(FIRST))
+            if(l.getTeam().equals(FIRST))
                 assertEquals(2, l.getPosition());
         }
     }
@@ -68,11 +68,11 @@ public class LeagueLogicTests {
         LeagueLogic.applyResultUpdate(teamInThird, new ResultUpdate(THIRD, 3, 4, 1));
         applyLeagueUpdate();
         for(LeaguePosition l : positions) {
-            if(l.getTeamId().equals(SECOND))
+            if(l.getTeam().equals(SECOND))
                 assertEquals(3, l.getPosition());
-            if(l.getTeamId().equals(FIRST))
+            if(l.getTeam().equals(FIRST))
                 assertEquals(2, l.getPosition());
-            if(l.getTeamId().equals(THIRD))
+            if(l.getTeam().equals(THIRD))
                 assertEquals(1, l.getPosition());
         }
     }
@@ -85,11 +85,11 @@ public class LeagueLogicTests {
         LeagueLogic.applyResultUpdate(teamInThird, new ResultUpdate(THIRD, 3, 25, 1));
         applyLeagueUpdate();
         for(LeaguePosition l : positions) {
-            if(l.getTeamId().equals(THIRD))
+            if(l.getTeam().equals(THIRD))
                 assertEquals(1, l.getPosition());
-            if(l.getTeamId().equals(SECOND))
+            if(l.getTeam().equals(SECOND))
                 assertEquals(2, l.getPosition());
-            if(l.getTeamId().equals(FIRST))
+            if(l.getTeam().equals(FIRST))
                 assertEquals(3, l.getPosition());
         }
     }
@@ -108,11 +108,11 @@ public class LeagueLogicTests {
         LeagueLogic.applyResultUpdate(teamInSecond, r[1]);
         applyLeagueUpdate();
         for(LeaguePosition l : positions) {
-            if(l.getTeamId().equals(FIRST))
+            if(l.getTeam().equals(FIRST))
                 assertEquals(1, l.getPosition());
-            if(l.getTeamId().equals(THIRD))
+            if(l.getTeam().equals(THIRD))
                 assertEquals(2, l.getPosition());
-            if(l.getTeamId().equals(SECOND))
+            if(l.getTeam().equals(SECOND))
                 assertEquals(3, l.getPosition());
         }
     }

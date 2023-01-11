@@ -43,20 +43,20 @@ public class LeaguePosition {
         this.goalsAgainst = goalsAgainst;
     }
 
-    public Team getTeamId() {
+    public Team getTeam() {
         return team;
     }
 
-    public void setTeamId(Team team) {
+    public void setTeam(Team team) {
         this.team = team;
     }
 
-    public League getLeagueId() {
+    public League getLeague() {
         return league;
     }
 
-    public void setLeagueId(League leagueId) {
-        this.league = leagueId;
+    public void setLeague(League league) {
+        this.league = league;
     }
 
     public Integer getPosition() {
@@ -122,7 +122,7 @@ public class LeaguePosition {
     public String toString() {
         return String.format(
                 "Position: %d, TeamID: %s, GoalsFor: %d, GoalsAgainst: %d, Points: %d",
-                this.getPosition(), this.getTeamId(), this.getGoalsFor(), this.getGoalsAgainst(), this.getPoints()
+                this.getPosition(), this.getTeam(), this.getGoalsFor(), this.getGoalsAgainst(), this.getPoints()
         );
     }
 
