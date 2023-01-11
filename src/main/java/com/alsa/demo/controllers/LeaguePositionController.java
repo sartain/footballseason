@@ -7,14 +7,13 @@ import com.alsa.demo.services.LeaguePositionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
 
-@Controller
+@RestController
 public class LeaguePositionController {
     private LeaguePositionService leaguePositionService;
 
@@ -46,6 +45,19 @@ public class LeaguePositionController {
             throw new ResponseStatusException(HttpStatus.I_AM_A_TEAPOT, e.getMessage(), e);
         }
     }
+
+    @PostMapping("leagueposition/{league}")
+    public void updateLeaguePositions(
+            @PathVariable String league,
+            @RequestBody String result) {
+        try {
+            leaguePositionService.applyLeagueTableUpdateGivenScore(result);
+        }
+        catch(Exception e) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, e.getMessage(), e);
+        }
+    }
+
 
 
 

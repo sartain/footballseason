@@ -18,6 +18,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -56,6 +57,23 @@ public class LeaguePositionControllerTests {
         List<LeaguePosition> response = leaguePositionsFromResponse(resultActions.andReturn());
         assertEquals(20, response.size());
         response.stream().forEach(e -> assertEquals(e.getPosition(), response.indexOf(e) + 1));
+    }
+
+    @Test
+    void putResultUpdate() throws Exception {
+        ResultActions getResultActions = this.mockMvc.perform(get("/leagueposition/Premier League")
+                        .content("{ \"result\" : \"Manchester United 3-0 Newcastle United\" }"))
+                .andExpect(status().isOk());
+        List<LeaguePosition> response = leaguePositionsFromResponse(getResultActions.andReturn());
+        assertEquals("Manchester United", response.get(3).getTeam().getName());
+        assertEquals("Newcastle United", response.get(2).getTeam().getName());
+        this.mockMvc.perform(post("/leagueposition/Premier League").content("Manchester United 2-0 Newcastle United"))
+                .andExpect(status().isOk());
+        getResultActions = this.mockMvc.perform(get("/leagueposition/Premier League"))
+                .andExpect(status().isOk());
+        response = leaguePositionsFromResponse(getResultActions.andReturn());
+        assertEquals("Manchester United", response.get(2).getTeam().getName());
+        assertEquals("Newcastle United", response.get(3).getTeam().getName());
     }
 
 }
