@@ -47,18 +47,6 @@ public class LeaguePositionIntegrationTests {
         assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
     }
 
-    private static class LeaguePositionList {
-        public LeaguePositionList(List<LeaguePosition> leaguePositions) {
-            this.leaguePositions = leaguePositions;
-        }
-
-        private List<LeaguePosition> leaguePositions;
-
-        public LeaguePositionList() {
-            leaguePositions = new ArrayList<>();
-        }
-    }
-
     @Test
     public void retrieveLeagueGivenLeagueName() {
         ResponseEntity<LeaguePosition[]> response = restTemplate.getForEntity("/leagueposition/Premier League", LeaguePosition[].class);
