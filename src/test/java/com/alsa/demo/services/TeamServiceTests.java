@@ -16,14 +16,14 @@ public class TeamServiceTests {
 
     @Test
     void testGetTeamNameFromId() {
-        String expectedTeamName = "Everton";
+        String expectedTeamName = "AFC Bournemouth";
         String actualTeamName = service.getTeamFromId(1).getName();
         assertEquals(expectedTeamName, actualTeamName);
     }
 
     @Test
     void saveTeam() {
-        String expectedTeamName = "Everton";
+        String expectedTeamName = "AFC Bournemouth";
         service.saveTeam(expectedTeamName);
         String actualTeamName = service.getTeamFromId(1).getName();
         assertEquals(expectedTeamName, actualTeamName);
