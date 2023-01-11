@@ -23,9 +23,9 @@ public class TeamServiceTests {
 
     @Test
     void saveTeam() {
-        String expectedTeamName = "AFC Bournemouth";
+        String expectedTeamName = "Swansea City";
         service.saveTeam(expectedTeamName);
-        String actualTeamName = service.getTeamFromId(1).getName();
+        String actualTeamName = service.getTeamFromId(21).getName();
         assertEquals(expectedTeamName, actualTeamName);
     }
 

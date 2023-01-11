@@ -61,8 +61,7 @@ public class LeaguePositionControllerTests {
 
     @Test
     void putResultUpdate() throws Exception {
-        ResultActions getResultActions = this.mockMvc.perform(get("/leagueposition/Premier League")
-                        .content("{ \"result\" : \"Manchester United 3-0 Newcastle United\" }"))
+        ResultActions getResultActions = this.mockMvc.perform(get("/leagueposition/Premier League"))
                 .andExpect(status().isOk());
         List<LeaguePosition> response = leaguePositionsFromResponse(getResultActions.andReturn());
         assertEquals("Manchester United", response.get(3).getTeam().getName());
