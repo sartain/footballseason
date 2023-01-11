@@ -1,6 +1,8 @@
 package com.alsa.demo.services;
 
 import com.alsa.demo.entities.*;
+import com.alsa.demo.exceptions.LeagueNotFoundException;
+import com.alsa.demo.exceptions.TeamNotFoundException;
 import com.alsa.demo.logic.LeagueLogic;
 import com.alsa.demo.logic.PremierLeagueScoringLogic;
 import com.alsa.demo.logic.ResultLogic;
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LeaguePositionService {
@@ -30,16 +33,21 @@ public class LeaguePositionService {
         this.teamDao = teamDao;
     }
 
-    public LeaguePosition getLeaguePositionGivenTeamAndLeagueId(int teamId, int leagueId) {
-        Team t = teamDao.findById(teamId).get();
-        League l = leagueDao.findById(leagueId).get();
-        return leaguePositionDao.findById(new LeaguePositionId(t, l)).get();
+    public Optional<LeaguePosition> getLeaguePositionGivenTeamAndLeagueId(int teamId, int leagueId) {
+        Optional<Team> t = teamDao.findById(teamId);
+        Optional<League> l = leagueDao.findById(leagueId);
+        return leaguePositionDao.findById(new LeaguePositionId(t.get(), l.get()));
     }
 
-    public LeaguePosition getLeaguePositionGivenTeamInLeague(String teamName, String leagueName) {
-        Team t = teamDao.findByName(teamName);
-        League l = leagueDao.findByName(leagueName);
-        return leaguePositionDao.findById(new LeaguePositionId(t, l)).get();
+    public Optional<LeaguePosition> getLeaguePositionGivenTeamInLeague(String teamName, String leagueName) throws LeagueNotFoundException, TeamNotFoundException {
+        Optional<Team> t = teamDao.findByName(teamName);
+        Optional<League> l = leagueDao.findByName(leagueName);
+        if(t.isEmpty())
+            throw new TeamNotFoundException(teamName);
+        if(l.isEmpty())
+            throw new LeagueNotFoundException(leagueName);
+        else
+            return leaguePositionDao.findById(new LeaguePositionId(t.get(), l.get()));
     }
 
     public List<LeaguePosition> getLeagueTable(int id) {

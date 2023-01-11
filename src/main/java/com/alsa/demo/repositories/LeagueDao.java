@@ -1,11 +1,12 @@
 package com.alsa.demo.repositories;
 
 import com.alsa.demo.entities.League;
-import com.alsa.demo.entities.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
 
 public interface LeagueDao extends JpaRepository<League, Integer> {
 
-    public League findByName(String name);
+    public Optional<League> findByName(String name);
 
 }

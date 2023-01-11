@@ -1,6 +1,8 @@
 package com.alsa.demo.controllers;
 
 import com.alsa.demo.entities.LeaguePosition;
+import com.alsa.demo.exceptions.LeagueNotFoundException;
+import com.alsa.demo.exceptions.TeamNotFoundException;
 import com.alsa.demo.services.LeaguePositionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -18,8 +20,8 @@ public class LeaguePositionController {
     @GetMapping("leagueposition")
     public ResponseEntity<LeaguePosition> getLeaguePosition(
             @RequestParam String league,
-            @RequestParam String team) {
-        return ResponseEntity.ok(leaguePositionService.getLeaguePositionGivenTeamInLeague(team, league));
+            @RequestParam String team) throws LeagueNotFoundException, TeamNotFoundException {
+        return ResponseEntity.of(leaguePositionService.getLeaguePositionGivenTeamInLeague(team, league));
     }
 
 
