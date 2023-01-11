@@ -7,6 +7,7 @@ import com.alsa.demo.services.LeaguePositionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -17,10 +18,10 @@ public class LeaguePositionController {
         this.leaguePositionService = leaguePositionService;
     }
 
-    @GetMapping("leagueposition")
+    @GetMapping("leagueposition/{league}/{team}")
     public ResponseEntity<LeaguePosition> getLeaguePosition(
-            @RequestParam String league,
-            @RequestParam String team) throws LeagueNotFoundException, TeamNotFoundException {
+            @PathVariable String league,
+            @PathVariable String team) throws LeagueNotFoundException, TeamNotFoundException {
         return ResponseEntity.of(leaguePositionService.getLeaguePositionGivenTeamInLeague(team, league));
     }
 
