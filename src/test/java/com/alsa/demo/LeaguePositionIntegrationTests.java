@@ -1,5 +1,6 @@
 package com.alsa.demo;
 import com.alsa.demo.entities.LeaguePosition;
+import com.fasterxml.jackson.core.type.TypeReference;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,10 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -40,5 +45,26 @@ public class LeaguePositionIntegrationTests {
         ResponseEntity<LeaguePosition> response = restTemplate.getForEntity("/leagueposition/Fake League/Everton", LeaguePosition.class);
         assertEquals(HttpStatus.I_AM_A_TEAPOT, response.getStatusCode());
         assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
+    }
+
+    private static class LeaguePositionList {
+        public LeaguePositionList(List<LeaguePosition> leaguePositions) {
+            this.leaguePositions = leaguePositions;
+        }
+
+        private List<LeaguePosition> leaguePositions;
+
+        public LeaguePositionList() {
+            leaguePositions = new ArrayList<>();
+        }
+    }
+
+    @Test
+    public void retrieveLeagueGivenLeagueName() {
+        ResponseEntity<LeaguePosition[]> response = restTemplate.getForEntity("/leagueposition/Premier League", LeaguePosition[].class);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
+        List<LeaguePosition> leaguePositions = Arrays.asList(response.getBody());
+        leaguePositions.forEach(e-> assertEquals(e.getPosition(), leaguePositions.indexOf(e) + 1));
     }
 }
