@@ -28,4 +28,17 @@ public class LeaguePositionIntegrationTests {
         System.out.println(teamName);
     }
 
+    @Test
+    public void falseTeamInPosition() {
+        ResponseEntity<LeaguePosition> response = restTemplate.getForEntity("/leagueposition/Premier League/Fake Name", LeaguePosition.class);
+        assertEquals(HttpStatus.I_AM_A_TEAPOT, response.getStatusCode());
+        assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
+    }
+
+    @Test
+    public void falseLeagueInPosition() {
+        ResponseEntity<LeaguePosition> response = restTemplate.getForEntity("/leagueposition/Fake League/Everton", LeaguePosition.class);
+        assertEquals(HttpStatus.I_AM_A_TEAPOT, response.getStatusCode());
+        assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
+    }
 }
