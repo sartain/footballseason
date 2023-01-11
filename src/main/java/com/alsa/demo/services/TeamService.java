@@ -5,6 +5,8 @@ import com.alsa.demo.repositories.TeamDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class TeamService {
 
@@ -22,6 +24,8 @@ public class TeamService {
     public void saveTeam(String name) {
         dao.save(new Team(name));
     }
+
+    public Optional<Team> findTeamFromName(String name) { return dao.findByName(name);}
 
 
 }
