@@ -49,7 +49,7 @@ public class LeaguePositionServiceTests {
         assertEquals(4, previousPositionManchesterUnited);
         //Expectation is that Manchester overtake Newcastle
         //Apply update
-        service.applyLeagueTableUpdateGivenScore("Manchester United 2-0 Newcastle United");
+        service.applyLeagueTableUpdateGivenScore("Manchester United 2-0 Newcastle United", "Premier League");
         //Check values
         int actualPositionManchesterUnited = service.getLeaguePositionGivenTeamInLeague("Manchester United", "Premier League").get().getPosition();
         int actualPositionNewcastleUnited = service.getLeaguePositionGivenTeamInLeague("Newcastle United", "Premier League").get().getPosition();
@@ -69,5 +69,19 @@ public class LeaguePositionServiceTests {
         Exception e = assertThrows(LeagueNotFoundException.class, () -> service.getLeaguePositionGivenTeamInLeague("Everton", "Fantasy League"));
         System.out.println(e.getMessage());
         assert(e.getMessage().contains("Fantasy League"));
+    }
+
+    @Test
+    void failLeagueUpdateFalseTeamName() {
+        Exception e = assertThrows(TeamNotFoundException.class, () -> service.applyLeagueTableUpdateGivenScore("Tottenham 6-0 Fake Name", "Premier League"));
+        System.out.println(e.getMessage());
+        assert(e.getMessage().contains("Fake Name"));
+    }
+
+    @Test
+    void failLeagueUpdateFalseLeagueName() {
+        Exception e = assertThrows(LeagueNotFoundException.class, () -> service.applyLeagueTableUpdateGivenScore("Tottenham 6-0 Everton", "Fake League"));
+        System.out.println(e.getMessage());
+        assert(e.getMessage().contains("Fake League"));
     }
 }

@@ -50,11 +50,11 @@ public class LeaguePositionController {
             @PathVariable String league,
             @RequestBody String result) {
         try {
-            leaguePositionService.applyLeagueTableUpdateGivenScore(result);
+            leaguePositionService.applyLeagueTableUpdateGivenScore(result, league);
             return ResponseEntity.ok("Updated: " + league);
         }
         catch(Exception e) {
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, e.getMessage(), e);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
         }
     }
 

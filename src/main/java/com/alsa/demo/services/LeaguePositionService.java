@@ -62,21 +62,22 @@ public class LeaguePositionService {
             return Optional.of(LeagueLogic.applyLeagueUpdate(leaguePositionDao.findAllByLeagueId(l.get().getId())));
     }
 
-    public void applyLeagueTableUpdateGivenScore(String input) {
+    public void applyLeagueTableUpdateGivenScore(String match, String leagueName) throws TeamNotFoundException, LeagueNotFoundException {
         //Assumption is that this is premier league
         //Slightly inefficient as all teams in all positions are modified, not just ones referenced
-        List<LeaguePosition> leaguePositions = getLeagueTable(1);
-        List<Team> positions = leaguePositions.stream().map(LeaguePosition::getTeam).toList();
-        try {
-            ResultUpdate[] r = PremierLeagueScoringLogic.scoreGame(ResultLogic.givenInputReturnResult(input, positions));
+        Optional<League> league = leagueDao.findByName(leagueName);
+        if(league.isEmpty())
+            throw new LeagueNotFoundException(leagueName);
+        else {
+            List<LeaguePosition> leaguePositions = getLeagueTable(league.get().getId());
+            List<Team> positions = leaguePositions.stream().map(LeaguePosition::getTeam).toList();
+            ResultUpdate[] r = PremierLeagueScoringLogic.scoreGame(ResultLogic.givenInputReturnResult(match, positions));
             LeagueLogic.applyResultUpdate(leaguePositions.stream().filter(e -> e.getTeam().getId().equals(r[0].getTeamId())).toList().get(0), r[0]);
             LeagueLogic.applyResultUpdate(leaguePositions.stream().filter(e -> e.getTeam().getId().equals(r[1].getTeamId())).toList().get(0), r[1]);
             LeagueLogic.applyLeagueUpdate(leaguePositions);
-            for(LeaguePosition p : leaguePositions) {
+            for (LeaguePosition p : leaguePositions) {
                 leaguePositionDao.save(p);
             }
-        }
-        catch(Exception e) {
         }
     }
 
