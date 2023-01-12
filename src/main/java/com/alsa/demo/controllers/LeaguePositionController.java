@@ -26,8 +26,7 @@ public class LeaguePositionController {
             @PathVariable String league,
             @PathVariable String team) {
         try {
-            Optional<LeaguePosition> returnLeaguePosition = leaguePositionService.getLeaguePositionGivenTeamInLeague(team, league);
-            return ResponseEntity.of(returnLeaguePosition);
+            return ResponseEntity.of(leaguePositionService.getLeaguePositionGivenTeamInLeague(team, league));
         }
         catch(Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
