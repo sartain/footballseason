@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - LeaguePositionServiceTests</title>
+<title>Test results - TeamIntegrationTests</title>
 <link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../js/report.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="content">
-<h1>LeaguePositionServiceTests</h1>
+<h1>TeamIntegrationTests</h1>
 <div class="breadcrumbs">
 <a href="../index.html">all</a> &gt; 
-<a href="../packages/com.alsa.demo.services.html">com.alsa.demo.services</a> &gt; LeaguePositionServiceTests</div>
+<a href="../packages/com.alsa.demo.html">com.alsa.demo</a> &gt; TeamIntegrationTests</div>
 <div id="summary">
 <table>
 <tr>
@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">8</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.069s</div>
+<div class="counter">0.087s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,43 +78,23 @@
 </tr>
 </thead>
 <tr>
-<td class="success">applyScoreUpdate()</td>
-<td class="success">0.023s</td>
+<td class="success">getTeam()</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">failFalseLeagueName()</td>
-<td class="success">0.006s</td>
+<td class="success">saveAndGetTeam()</td>
+<td class="success">0.013s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">failFalseTeamName()</td>
-<td class="success">0.006s</td>
+<td class="success">saveAndGetTeamValidationIssue()</td>
+<td class="success">0.024s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">failLeagueUpdateFalseLeagueName()</td>
-<td class="success">0.004s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">failLeagueUpdateFalseTeamName()</td>
-<td class="success">0.010s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">getOrderedPremierLeagueTable()</td>
-<td class="success">0.009s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">getPositionOfTeamInLeagueViaId()</td>
-<td class="success">0.005s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">getPositionOfTeamInLeagueViaTeamAndLeagueName()</td>
-<td class="success">0.006s</td>
+<td class="success">saveTeam()</td>
+<td class="success">0.042s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -122,12 +102,9 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-01-12T10:01:12.965Z  INFO 11845 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.alsa.demo.services.LeaguePositionServiceTests]: LeaguePositionServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-01-12T10:01:12.974Z  INFO 11845 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.services.LeaguePositionServiceTests
-No Team Found of name: Everton U23
-No League Found of name: Fake League
-No Team Found of name: Fake Name
-No League Found of name: Fantasy League
+<pre>2023-01-12T10:01:11.977Z  INFO 11845 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.alsa.demo.TeamIntegrationTests]: TeamIntegrationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-01-12T10:01:11.978Z  INFO 11845 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.TeamIntegrationTests
+2023-01-12T10:01:12.063Z  WARN 11845 --- [o-auto-1-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public void com.alsa.demo.controllers.TeamController.saveTeam(com.alsa.demo.input.TeamForm): [Field error in object 'teamForm' on field 'teamName': rejected value []; codes [NotBlank.teamForm.teamName,NotBlank.teamName,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [teamForm.teamName,teamName]; arguments []; default message [teamName]]; default message [must not be blank]] ]
 </pre>
 </span>
 </div>

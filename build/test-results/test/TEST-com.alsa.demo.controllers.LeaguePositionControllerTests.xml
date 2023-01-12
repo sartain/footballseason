@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.alsa.demo.controllers.LeaguePositionControllerTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-01-12T10:01:12" hostname="Alexs-MacBook-Pro.local" time="0.097">
+  <properties/>
+  <testcase name="returnSortedLeagueGivenLeagueName()" classname="com.alsa.demo.controllers.LeaguePositionControllerTests" time="0.03"/>
+  <testcase name="returnLeaguePositionGivenNameAndLeague()" classname="com.alsa.demo.controllers.LeaguePositionControllerTests" time="0.01"/>
+  <testcase name="putResultUpdate()" classname="com.alsa.demo.controllers.LeaguePositionControllerTests" time="0.055"/>
+  <system-out><![CDATA[2023-01-12T10:01:12.071Z  INFO 11845 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.alsa.demo.controllers.LeaguePositionControllerTests]: LeaguePositionControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-01-12T10:01:12.084Z  INFO 11845 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.controllers.LeaguePositionControllerTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.1)
+
+2023-01-12T10:01:12.112Z  INFO 11845 --- [    Test worker] c.a.d.c.LeaguePositionControllerTests    : Starting LeaguePositionControllerTests using Java 17.0.3.1 with PID 11845 (started by alsa in /Users/alsa/Downloads/footballseason)
+2023-01-12T10:01:12.112Z  INFO 11845 --- [    Test worker] c.a.d.c.LeaguePositionControllerTests    : No active profile set, falling back to 1 default profile: "default"
+2023-01-12T10:01:12.241Z  INFO 11845 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-12T10:01:12.252Z  INFO 11845 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 3 JPA repository interfaces.
+2023-01-12T10:01:12.312Z  INFO 11845 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-01-12T10:01:12.313Z  INFO 11845 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:670cbc61-cca8-4def-aaf7-ca99f002f037 user=SA
+2023-01-12T10:01:12.314Z  INFO 11845 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-01-12T10:01:12.315Z  INFO 11845 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-12T10:01:12.316Z  WARN 11845 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-12T10:01:12.318Z  INFO 11845 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-12T10:01:12.333Z  WARN 11845 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.alsa.demo.entities.LeaguePositionId
+2023-01-12T10:01:12.333Z  WARN 11845 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.alsa.demo.entities.LeaguePositionId
+2023-01-12T10:01:12.364Z  INFO 11845 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-12T10:01:12.365Z  INFO 11845 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-12T10:01:12.453Z  WARN 11845 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-12T10:01:12.710Z  INFO 11845 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-01-12T10:01:12.710Z  INFO 11845 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-01-12T10:01:12.711Z  INFO 11845 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-01-12T10:01:12.785Z  INFO 11845 --- [    Test worker] c.a.d.c.LeaguePositionControllerTests    : Started LeaguePositionControllerTests in 0.698 seconds (process running for 7.3)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

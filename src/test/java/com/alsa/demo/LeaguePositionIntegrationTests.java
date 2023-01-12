@@ -1,6 +1,5 @@
 package com.alsa.demo;
 import com.alsa.demo.entities.LeaguePosition;
-import com.fasterxml.jackson.core.type.TypeReference;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,7 +28,6 @@ public class LeaguePositionIntegrationTests {
         assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
         String teamName = response.getBody().getTeam().getName();
         assertEquals("Everton", teamName);
-        System.out.println(teamName);
     }
 
     @Test
@@ -79,5 +76,19 @@ public class LeaguePositionIntegrationTests {
         assertEquals(3, leaguePositions.get(2).getPosition());
         assertEquals("Newcastle United", leaguePositions.get(3).getTeam().getName());
         assertEquals(4, leaguePositions.get(3).getPosition());
+    }
+
+    @Test
+    public void failLeagueUpdateFalseTeamName() {
+        ResponseEntity<String> postResponse = restTemplate.postForEntity("/leagueposition/Premier League", "Fake Name 2-0 Newcastle United", String.class);
+        assertEquals(postResponse.getStatusCode(), HttpStatus.NOT_FOUND);
+        assert(postResponse.getBody().contains("Fake Name"));
+    }
+
+    @Test
+    public void failLeagueUpdateFalseLeagueName() {
+        ResponseEntity<String> postResponse = restTemplate.postForEntity("/leagueposition/Fake League", "Arsenal 2-0 Newcastle United", String.class);
+        assertEquals(postResponse.getStatusCode(), HttpStatus.NOT_FOUND);
+        assert(postResponse.getBody().contains("Fake League"));
     }
 }

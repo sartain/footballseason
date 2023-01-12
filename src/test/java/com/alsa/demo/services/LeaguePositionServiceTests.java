@@ -16,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @Transactional
 public class LeaguePositionServiceTests {
 
-
     @Autowired
     private LeaguePositionService service;
 

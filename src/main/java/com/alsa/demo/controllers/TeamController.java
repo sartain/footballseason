@@ -22,7 +22,6 @@ public class TeamController {
 
     @PostMapping("/team")
     public void saveTeam(@Validated @RequestBody TeamForm teamForm) {
-        System.out.println(teamForm.getTeamName());
         service.saveTeam(teamForm.getTeamName());
     }
 
