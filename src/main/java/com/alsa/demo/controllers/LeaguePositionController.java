@@ -30,7 +30,7 @@ public class LeaguePositionController {
             return ResponseEntity.of(returnLeaguePosition);
         }
         catch(Exception e) {
-            throw new ResponseStatusException(HttpStatus.I_AM_A_TEAPOT, e.getMessage(), e);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
         }
     }
 
@@ -42,7 +42,7 @@ public class LeaguePositionController {
             return ResponseEntity.of(returnLeaguePosition);
         }
         catch(Exception e) {
-            throw new ResponseStatusException(HttpStatus.I_AM_A_TEAPOT, e.getMessage(), e);
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
         }
     }
 
