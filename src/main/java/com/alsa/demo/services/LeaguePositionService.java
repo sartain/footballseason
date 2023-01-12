@@ -9,6 +9,9 @@ import com.alsa.demo.logic.ResultLogic;
 import com.alsa.demo.repositories.LeagueDao;
 import com.alsa.demo.repositories.LeaguePositionDao;
 import com.alsa.demo.repositories.TeamDao;
+import io.micrometer.observation.annotation.Observed;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +20,8 @@ import java.util.Optional;
 
 @Service
 public class LeaguePositionService {
+
+    private static final Logger log = LoggerFactory.getLogger(LeaguePositionService.class);
 
     @Autowired
     LeaguePositionDao leaguePositionDao;
@@ -62,9 +67,13 @@ public class LeaguePositionService {
             return Optional.of(LeagueLogic.applyLeagueUpdate(leaguePositionDao.findAllByLeagueId(l.get().getId())));
     }
 
+    @Observed(name = "user.name",
+            contextualName = "getting-user-name",
+            lowCardinalityKeyValues = {"match", "leagueName"})
     public void applyLeagueTableUpdateGivenScore(String match, String leagueName) throws TeamNotFoundException, LeagueNotFoundException {
         //Assumption is that this is premier league
         //Slightly inefficient as all teams in all positions are modified, not just ones referenced
+        log.info(String.format("Updating league table for match: %s, in league: %s", match, leagueName));
         Optional<League> league = leagueDao.findByName(leagueName);
         if(league.isEmpty())
             throw new LeagueNotFoundException(leagueName);
