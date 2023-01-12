@@ -22,6 +22,13 @@ public class CircuitBreakerService {
 
     private final WebClient client;
 
+    /**
+     * After a single call is over 2 seconds, put the circuit breaker in open state for 20s
+     * Then semi-open
+     * If 70% of the single calls are failing do it
+     * @param webClientBuilder WebClient to make API call
+     */
+
     @Autowired
     public CircuitBreakerService(WebClient.Builder webClientBuilder) {
         this.client = webClientBuilder.baseUrl("http://localhost:7654/leagueposition").build();
@@ -46,6 +53,7 @@ public class CircuitBreakerService {
                 .accept(MediaType.APPLICATION_JSON)
                 .retrieve()
                 .bodyToMono(LeaguePosition.class)
+                .delayElement(Duration.ofSeconds(5))
                 .blockOptional();
         Supplier<Optional<LeaguePosition>> decoratedSupplier = circuitBreaker.decorateSupplier(supplier);
         return decoratedSupplier.get();

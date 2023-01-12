@@ -47,7 +47,6 @@ public class LeaguePositionService {
     }
 
     public Optional<LeaguePosition> getLeaguePositionGivenTeamInLeague(String teamName, String leagueName) throws LeagueNotFoundException, TeamNotFoundException, InterruptedException {
-        sleep(5000);
         Optional<Team> t = teamDao.findByName(teamName);
         Optional<League> l = leagueDao.findByName(leagueName);
         if(t.isEmpty())
