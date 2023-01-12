@@ -26,6 +26,7 @@ public class CircuitBreakerService {
      * After a single call is over 2 seconds, put the circuit breaker in open state for 20s
      * Then semi-open
      * If 70% of the single calls are failing do it
+     * https://resilience4j.readme.io
      * @param webClientBuilder WebClient to make API call
      */
 
