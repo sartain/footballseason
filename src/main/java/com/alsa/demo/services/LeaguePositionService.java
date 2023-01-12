@@ -59,6 +59,9 @@ public class LeaguePositionService {
         return LeagueLogic.applyLeagueUpdate(leaguePositionDao.findAllByLeagueId(id));
     }
 
+    @Observed(name = "receiveLeagueTable",
+            contextualName = "receiving-league-table",
+            lowCardinalityKeyValues = {"leagueName", "leagueName2"})
     public Optional<List<LeaguePosition>> getLeagueTableGivenName(String leagueName) throws LeagueNotFoundException {
         Optional<League> l = leagueDao.findByName(leagueName);
         if(l.isEmpty())
@@ -67,9 +70,6 @@ public class LeaguePositionService {
             return Optional.of(LeagueLogic.applyLeagueUpdate(leaguePositionDao.findAllByLeagueId(l.get().getId())));
     }
 
-    @Observed(name = "user.name",
-            contextualName = "getting-user-name",
-            lowCardinalityKeyValues = {"match", "leagueName"})
     public void applyLeagueTableUpdateGivenScore(String match, String leagueName) throws TeamNotFoundException, LeagueNotFoundException {
         //Assumption is that this is premier league
         //Slightly inefficient as all teams in all positions are modified, not just ones referenced

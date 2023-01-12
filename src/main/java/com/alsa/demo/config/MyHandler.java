@@ -17,12 +17,12 @@ class MyHandler implements ObservationHandler<Observation.Context> {
 
     @Override
     public void onStart(Observation.Context context) {
-        log.info("Before running the observation for context [{}], userType [{}]", context.getName(), getUserTypeFromContext(context));
+        log.info("Before running the observation for context [{}], leagueName [{}]", context.getName(), getLeagueNameFromContext(context));
     }
 
     @Override
     public void onStop(Observation.Context context) {
-        log.info("After running the observation for context [{}], userType [{}]", context.getName(), getUserTypeFromContext(context));
+        log.info("After running the observation for context [{}], leagueName [{}]", context.getName(), getLeagueNameFromContext(context));
     }
 
     @Override
@@ -30,9 +30,9 @@ class MyHandler implements ObservationHandler<Observation.Context> {
         return true;
     }
 
-    private String getUserTypeFromContext(Observation.Context context) {
+    private String getLeagueNameFromContext(Observation.Context context) {
         return StreamSupport.stream(context.getLowCardinalityKeyValues().spliterator(), false)
-                .filter(keyValue -> "userType".equals(keyValue.getKey()))
+                .filter(keyValue -> "leagueName".equals(keyValue.getKey()))
                 .map(KeyValue::getValue)
                 .findFirst()
                 .orElse("UNKNOWN");
