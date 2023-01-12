@@ -18,6 +18,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+import static java.lang.Thread.sleep;
+
 @Service
 public class LeaguePositionService {
 
@@ -44,7 +46,8 @@ public class LeaguePositionService {
         return leaguePositionDao.findById(new LeaguePositionId(t.get(), l.get()));
     }
 
-    public Optional<LeaguePosition> getLeaguePositionGivenTeamInLeague(String teamName, String leagueName) throws LeagueNotFoundException, TeamNotFoundException {
+    public Optional<LeaguePosition> getLeaguePositionGivenTeamInLeague(String teamName, String leagueName) throws LeagueNotFoundException, TeamNotFoundException, InterruptedException {
+        sleep(5000);
         Optional<Team> t = teamDao.findByName(teamName);
         Optional<League> l = leagueDao.findByName(leagueName);
         if(t.isEmpty())

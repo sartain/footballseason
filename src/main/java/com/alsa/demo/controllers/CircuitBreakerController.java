@@ -25,7 +25,7 @@ public class CircuitBreakerController {
             @PathVariable String league,
             @PathVariable String team) {
         try {
-            return ResponseEntity.of(service.getLeaguePositionGivenTeamAndLeagueName(team, league));
+            return ResponseEntity.of(service.getLeaguePositionGivenTeamAndLeagueNameWithBreaker(team, league));
         }
         catch(Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);

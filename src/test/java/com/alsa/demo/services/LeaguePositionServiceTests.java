@@ -33,14 +33,14 @@ public class LeaguePositionServiceTests {
     }
 
     @Test
-    void getPositionOfTeamInLeagueViaTeamAndLeagueName() throws LeagueNotFoundException, TeamNotFoundException {
+    void getPositionOfTeamInLeagueViaTeamAndLeagueName() throws LeagueNotFoundException, TeamNotFoundException, InterruptedException {
         //Arsenal of ID 2 are first
         int actualPosition = service.getLeaguePositionGivenTeamInLeague("Arsenal", "Premier League").get().getPosition();
         assertEquals(1, actualPosition);
     }
 
     @Test
-    void applyScoreUpdate() throws LeagueNotFoundException, TeamNotFoundException {
+    void applyScoreUpdate() throws LeagueNotFoundException, TeamNotFoundException, InterruptedException {
         //Get previous positions
         int previousPositionManchesterUnited = service.getLeaguePositionGivenTeamInLeague("Manchester United", "Premier League").get().getPosition();
         int previousPositionNewcastleUnited = service.getLeaguePositionGivenTeamInLeague("Newcastle United", "Premier League").get().getPosition();
