@@ -1,12 +1,9 @@
 package com.alsa.demo.controllers;
 
 import com.alsa.demo.entities.LeaguePosition;
-import com.alsa.demo.exceptions.LeagueNotFoundException;
-import com.alsa.demo.exceptions.TeamNotFoundException;
 import com.alsa.demo.services.LeaguePositionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
