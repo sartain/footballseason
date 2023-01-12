@@ -58,6 +58,7 @@ public class LeaguePositionIntegrationTests {
 
     @Test
     public void updateLeagueTable() {
+        //Assert positions of teams
         ResponseEntity<LeaguePosition[]> response = restTemplate.getForEntity("/leagueposition/Premier League", LeaguePosition[].class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());
@@ -67,7 +68,9 @@ public class LeaguePositionIntegrationTests {
         assertEquals("Newcastle United", leaguePositions.get(2).getTeam().getName());
         assertEquals(3, leaguePositions.get(2).getPosition());
         //Make update
-        restTemplate.postForEntity("/leagueposition/Premier League", "Manchester United 2-0 Newcastle United", String.class);
+        ResponseEntity<String> postResponse = restTemplate.postForEntity("/leagueposition/Premier League", "Manchester United 2-0 Newcastle United", String.class);
+        assert(postResponse.getBody().contains("Premier League"));
+        //Assert updated position of teams
         response = restTemplate.getForEntity("/leagueposition/Premier League", LeaguePosition[].class);
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType());

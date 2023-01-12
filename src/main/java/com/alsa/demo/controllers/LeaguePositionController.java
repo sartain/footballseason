@@ -46,11 +46,12 @@ public class LeaguePositionController {
     }
 
     @PostMapping("leagueposition/{league}")
-    public void updateLeaguePositions(
+    public ResponseEntity<String> updateLeaguePositions(
             @PathVariable String league,
             @RequestBody String result) {
         try {
             leaguePositionService.applyLeagueTableUpdateGivenScore(result);
+            return ResponseEntity.ok("Updated: " + league);
         }
         catch(Exception e) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, e.getMessage(), e);

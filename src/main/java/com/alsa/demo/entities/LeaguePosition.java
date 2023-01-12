@@ -99,6 +99,17 @@ public class LeaguePosition {
         this.goalsAgainst = goalsAgainst;
     }
 
+    /**
+     * Contains Logic for comparing two league positions
+     * 3 factors checked, if equal move to next
+     *  -More points
+     *  -Better Goal Difference
+     *  -More Goals Scored
+     *  -Return larger than as default
+      * @param p LeaguePosition of other team
+     * @return 1 for league position above next team, -1 if not
+     */
+
     public int compareTo(LeaguePosition p) {
         if(p.getPoints() > this.getPoints())
             return -1;
