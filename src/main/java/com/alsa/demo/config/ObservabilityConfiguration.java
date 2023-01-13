@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration(proxyBeanMethods = false)
-public class MyConfiguration {
+public class ObservabilityConfiguration {
 
     @Bean
     ObservedAspect observedAspect(ObservationRegistry observationRegistry) {

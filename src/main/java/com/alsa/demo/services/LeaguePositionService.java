@@ -61,9 +61,9 @@ public class LeaguePositionService {
         return LeagueLogic.applyLeagueUpdate(leaguePositionDao.findAllByLeagueId(id));
     }
 
-    @Observed(name = "receiveLeagueTable",
+    @Observed(name = "get-league-table-given-name",
             contextualName = "receiving-league-table",
-            lowCardinalityKeyValues = {"leagueName", "leagueName2"})
+            lowCardinalityKeyValues = {"leagueName", "Premier League"})
     public Optional<List<LeaguePosition>> getLeagueTableGivenName(String leagueName) throws LeagueNotFoundException {
         Optional<League> l = leagueDao.findByName(leagueName);
         if(l.isEmpty())
