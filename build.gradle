@@ -26,6 +26,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
 	implementation "io.github.resilience4j:resilience4j-all:2.0.0"
+	testImplementation 'io.micrometer:micrometer-observation-test'
 }
 
 tasks.named('test') {

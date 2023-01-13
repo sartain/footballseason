@@ -20,7 +20,7 @@ import java.util.stream.StreamSupport;
 @Component
 class ObservabilityHandler implements ObservationHandler<Observation.Context> {
 
-    private MeterRegistry registry = new SimpleMeterRegistry();
+    private static MeterRegistry registry = new SimpleMeterRegistry();
     private Timer.Sample sample;
     private static final Logger log = LoggerFactory.getLogger(ObservabilityHandler.class);
 
