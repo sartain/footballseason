@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.069s</div>
+<div class="counter">0.122s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,42 +79,42 @@
 </thead>
 <tr>
 <td class="success">applyScoreUpdate()</td>
-<td class="success">0.023s</td>
+<td class="success">0.042s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">failFalseLeagueName()</td>
-<td class="success">0.006s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">failFalseTeamName()</td>
-<td class="success">0.006s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">failLeagueUpdateFalseLeagueName()</td>
-<td class="success">0.004s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">failLeagueUpdateFalseTeamName()</td>
 <td class="success">0.010s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">failFalseTeamName()</td>
+<td class="success">0.015s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">failLeagueUpdateFalseLeagueName()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">failLeagueUpdateFalseTeamName()</td>
+<td class="success">0.014s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">getOrderedPremierLeagueTable()</td>
-<td class="success">0.009s</td>
+<td class="success">0.013s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getPositionOfTeamInLeagueViaId()</td>
-<td class="success">0.005s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">getPositionOfTeamInLeagueViaTeamAndLeagueName()</td>
-<td class="success">0.006s</td>
+<td class="success">0.011s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -122,11 +122,40 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-01-12T10:01:12.965Z  INFO 11845 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.alsa.demo.services.LeaguePositionServiceTests]: LeaguePositionServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-01-12T10:01:12.974Z  INFO 11845 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.services.LeaguePositionServiceTests
+<pre>2023-01-13T14:20:36.612Z  INFO [server,,] 57456 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.alsa.demo.services.LeaguePositionServiceTests]: LeaguePositionServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-01-13T14:20:36.624Z  INFO [server,,] 57456 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.services.LeaguePositionServiceTests
+START data: get-league-position-given-team-and-league
+ERROR data: null, error: com.alsa.demo.exceptions.TeamNotFoundException: No Team Found of name: Everton U23
+STOP: get-league-position-given-team-and-league response time: 8ms
 No Team Found of name: Everton U23
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 5ms
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 3ms
+START data: update-league-table-given-match
+2023-01-13T14:20:36.656Z  INFO [server,,] 57456 --- [    Test worker] c.a.demo.services.LeaguePositionService  : Updating league table for match: Manchester United 2-0 Newcastle United, in league: Premier League
+STOP: update-league-table-given-match response time: 15ms
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 4ms
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 3ms
+START data: update-league-table-given-match
+2023-01-13T14:20:36.689Z  INFO [server,,] 57456 --- [    Test worker] c.a.demo.services.LeaguePositionService  : Updating league table for match: Tottenham 6-0 Everton, in league: Fake League
+ERROR data: null, error: com.alsa.demo.exceptions.LeagueNotFoundException: No League Found of name: Fake League
+STOP: update-league-table-given-match response time: 4ms
 No League Found of name: Fake League
+START data: get-league-table-given-id
+STOP: get-league-table-given-id response time: 8ms
+START data: update-league-table-given-match
+2023-01-13T14:20:36.711Z  INFO [server,,] 57456 --- [    Test worker] c.a.demo.services.LeaguePositionService  : Updating league table for match: Tottenham 6-0 Fake Name, in league: Premier League
+ERROR data: null, error: com.alsa.demo.exceptions.TeamNotFoundException: No Team Found of name: Fake Name
+STOP: update-league-table-given-match response time: 10ms
 No Team Found of name: Fake Name
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 4ms
+START data: get-league-position-given-team-and-league
+ERROR data: null, error: com.alsa.demo.exceptions.LeagueNotFoundException: No League Found of name: Fantasy League
+STOP: get-league-position-given-team-and-league response time: 4ms
 No League Found of name: Fantasy League
 </pre>
 </span>
@@ -139,7 +168,7 @@ No League Found of name: Fantasy League
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at 12 Jan 2023, 10:01:13</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at 13 Jan 2023, 14:20:38</p>
 </div>
 </div>
 </body>

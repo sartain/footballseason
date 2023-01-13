@@ -5,6 +5,7 @@ import com.alsa.demo.entities.LeaguePosition;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
+import io.micrometer.observation.annotation.Observed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
 import java.io.IOException;
+import java.net.URI;
 import java.time.Duration;
 import java.util.Optional;
 import java.util.concurrent.TimeoutException;
@@ -49,6 +51,11 @@ public class CircuitBreakerService {
 
     CircuitBreaker circuitBreaker;
 
+    @Observed(
+            name = "get-league-position-circuit-breaker",
+            contextualName = "",
+            lowCardinalityKeyValues = {"http.status", "Http.Status"}
+    )
     public Optional<LeaguePosition> getLeaguePositionGivenTeamAndLeagueNameWithBreaker(String teamName, String leagueName) {
         Supplier<Optional<LeaguePosition>> supplier = () -> client.get().uri("/"+leagueName+"/"+teamName)
                 .accept(MediaType.APPLICATION_JSON)

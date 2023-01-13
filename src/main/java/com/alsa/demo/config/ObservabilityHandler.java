@@ -13,7 +13,10 @@ import org.springframework.stereotype.Component;
 import java.time.Duration;
 import java.util.stream.StreamSupport;
 
-// Example of plugging in a custom handler that in this case will print a statement before and after all observations take place
+/**
+ * The observability handler implementations process events that happen
+ * This handler produces metrics or traces
+ */
 @Component
 class ObservabilityHandler implements ObservationHandler<Observation.Context> {
 
@@ -65,7 +68,7 @@ class ObservabilityHandler implements ObservationHandler<Observation.Context> {
     @Override
     public void onStop(Observation.Context context) {
         long time = sample.stop(Timer.builder("my.timer").register(registry));
-        System.out.println("STOP  " + "data: " + context.get(String.class) + " time: " + Duration.ofNanos(time).toMillis() + "ms");
+        System.out.println("STOP: " + context.getName() + " response time: " + Duration.ofNanos(time).toMillis() + "ms");
     }
 
     @Override

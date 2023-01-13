@@ -1,19 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.alsa.demo.services.LeaguePositionServiceTests" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-01-12T10:01:12" hostname="Alexs-MacBook-Pro.local" time="0.075">
+<testsuite name="com.alsa.demo.services.LeaguePositionServiceTests" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-01-13T14:20:36" hostname="Alexs-MacBook-Pro.local" time="0.129">
   <properties/>
-  <testcase name="failFalseTeamName()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.006"/>
-  <testcase name="applyScoreUpdate()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.023"/>
-  <testcase name="failLeagueUpdateFalseLeagueName()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.004"/>
-  <testcase name="getOrderedPremierLeagueTable()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.009"/>
-  <testcase name="failLeagueUpdateFalseTeamName()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.01"/>
-  <testcase name="getPositionOfTeamInLeagueViaTeamAndLeagueName()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.006"/>
-  <testcase name="failFalseLeagueName()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.006"/>
-  <testcase name="getPositionOfTeamInLeagueViaId()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.005"/>
-  <system-out><![CDATA[2023-01-12T10:01:12.965Z  INFO 11845 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.alsa.demo.services.LeaguePositionServiceTests]: LeaguePositionServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-01-12T10:01:12.974Z  INFO 11845 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.services.LeaguePositionServiceTests
+  <testcase name="failFalseTeamName()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.015"/>
+  <testcase name="applyScoreUpdate()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.042"/>
+  <testcase name="failLeagueUpdateFalseLeagueName()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.008"/>
+  <testcase name="getOrderedPremierLeagueTable()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.013"/>
+  <testcase name="failLeagueUpdateFalseTeamName()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.014"/>
+  <testcase name="getPositionOfTeamInLeagueViaTeamAndLeagueName()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.011"/>
+  <testcase name="failFalseLeagueName()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.01"/>
+  <testcase name="getPositionOfTeamInLeagueViaId()" classname="com.alsa.demo.services.LeaguePositionServiceTests" time="0.009"/>
+  <system-out><![CDATA[2023-01-13T14:20:36.612Z  INFO [server,,] 57456 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.alsa.demo.services.LeaguePositionServiceTests]: LeaguePositionServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-01-13T14:20:36.624Z  INFO [server,,] 57456 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.services.LeaguePositionServiceTests
+START data: get-league-position-given-team-and-league
+ERROR data: null, error: com.alsa.demo.exceptions.TeamNotFoundException: No Team Found of name: Everton U23
+STOP: get-league-position-given-team-and-league response time: 8ms
 No Team Found of name: Everton U23
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 5ms
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 3ms
+START data: update-league-table-given-match
+2023-01-13T14:20:36.656Z  INFO [server,,] 57456 --- [    Test worker] c.a.demo.services.LeaguePositionService  : Updating league table for match: Manchester United 2-0 Newcastle United, in league: Premier League
+STOP: update-league-table-given-match response time: 15ms
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 4ms
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 3ms
+START data: update-league-table-given-match
+2023-01-13T14:20:36.689Z  INFO [server,,] 57456 --- [    Test worker] c.a.demo.services.LeaguePositionService  : Updating league table for match: Tottenham 6-0 Everton, in league: Fake League
+ERROR data: null, error: com.alsa.demo.exceptions.LeagueNotFoundException: No League Found of name: Fake League
+STOP: update-league-table-given-match response time: 4ms
 No League Found of name: Fake League
+START data: get-league-table-given-id
+STOP: get-league-table-given-id response time: 8ms
+START data: update-league-table-given-match
+2023-01-13T14:20:36.711Z  INFO [server,,] 57456 --- [    Test worker] c.a.demo.services.LeaguePositionService  : Updating league table for match: Tottenham 6-0 Fake Name, in league: Premier League
+ERROR data: null, error: com.alsa.demo.exceptions.TeamNotFoundException: No Team Found of name: Fake Name
+STOP: update-league-table-given-match response time: 10ms
 No Team Found of name: Fake Name
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 4ms
+START data: get-league-position-given-team-and-league
+ERROR data: null, error: com.alsa.demo.exceptions.LeagueNotFoundException: No League Found of name: Fantasy League
+STOP: get-league-position-given-team-and-league response time: 4ms
 No League Found of name: Fantasy League
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

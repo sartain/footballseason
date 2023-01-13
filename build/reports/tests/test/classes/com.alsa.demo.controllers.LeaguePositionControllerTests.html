@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.095s</div>
+<div class="counter">0.094s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,17 +79,17 @@
 </thead>
 <tr>
 <td class="success">putResultUpdate()</td>
-<td class="success">0.055s</td>
+<td class="success">0.051s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">returnLeaguePositionGivenNameAndLeague()</td>
-<td class="success">0.010s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">returnSortedLeagueGivenLeagueName()</td>
-<td class="success">0.030s</td>
+<td class="success">0.034s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -97,8 +97,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-01-12T10:01:12.071Z  INFO 11845 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.alsa.demo.controllers.LeaguePositionControllerTests]: LeaguePositionControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-01-12T10:01:12.084Z  INFO 11845 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.controllers.LeaguePositionControllerTests
+<pre>2023-01-13T14:20:35.343Z  INFO [server,,] 57456 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.alsa.demo.controllers.LeaguePositionControllerTests]: LeaguePositionControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-01-13T14:20:35.366Z  INFO [server,,] 57456 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.controllers.LeaguePositionControllerTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -108,25 +108,38 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.1)
 
-2023-01-12T10:01:12.112Z  INFO 11845 --- [    Test worker] c.a.d.c.LeaguePositionControllerTests    : Starting LeaguePositionControllerTests using Java 17.0.3.1 with PID 11845 (started by alsa in /Users/alsa/Downloads/footballseason)
-2023-01-12T10:01:12.112Z  INFO 11845 --- [    Test worker] c.a.d.c.LeaguePositionControllerTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-01-12T10:01:12.241Z  INFO 11845 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-12T10:01:12.252Z  INFO 11845 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 3 JPA repository interfaces.
-2023-01-12T10:01:12.312Z  INFO 11845 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2023-01-12T10:01:12.313Z  INFO 11845 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:670cbc61-cca8-4def-aaf7-ca99f002f037 user=SA
-2023-01-12T10:01:12.314Z  INFO 11845 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2023-01-12T10:01:12.315Z  INFO 11845 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-12T10:01:12.316Z  WARN 11845 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-2023-01-12T10:01:12.318Z  INFO 11845 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-01-12T10:01:12.333Z  WARN 11845 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.alsa.demo.entities.LeaguePositionId
-2023-01-12T10:01:12.333Z  WARN 11845 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.alsa.demo.entities.LeaguePositionId
-2023-01-12T10:01:12.364Z  INFO 11845 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-12T10:01:12.365Z  INFO 11845 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-12T10:01:12.453Z  WARN 11845 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-12T10:01:12.710Z  INFO 11845 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-01-12T10:01:12.710Z  INFO 11845 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-01-12T10:01:12.711Z  INFO 11845 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-01-12T10:01:12.785Z  INFO 11845 --- [    Test worker] c.a.d.c.LeaguePositionControllerTests    : Started LeaguePositionControllerTests in 0.698 seconds (process running for 7.3)
+2023-01-13T14:20:35.399Z  INFO [server,,] 57456 --- [    Test worker] c.a.d.c.LeaguePositionControllerTests    : Starting LeaguePositionControllerTests using Java 17.0.3.1 with PID 57456 (started by alsa in /Users/alsa/Downloads/footballseason)
+2023-01-13T14:20:35.400Z  INFO [server,,] 57456 --- [    Test worker] c.a.d.c.LeaguePositionControllerTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-01-13T14:20:35.598Z  INFO [server,,] 57456 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-13T14:20:35.610Z  INFO [server,,] 57456 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 3 JPA repository interfaces.
+2023-01-13T14:20:35.694Z  INFO [server,,] 57456 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-01-13T14:20:35.696Z  INFO [server,,] 57456 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:d797feb9-e072-4faf-b2a6-7db1714f79c2 user=SA
+2023-01-13T14:20:35.696Z  INFO [server,,] 57456 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-01-13T14:20:35.697Z  INFO [server,,] 57456 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-13T14:20:35.699Z  WARN [server,,] 57456 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-13T14:20:35.702Z  INFO [server,,] 57456 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-13T14:20:35.716Z  WARN [server,,] 57456 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.alsa.demo.entities.LeaguePositionId
+2023-01-13T14:20:35.717Z  WARN [server,,] 57456 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.alsa.demo.entities.LeaguePositionId
+2023-01-13T14:20:35.749Z  INFO [server,,] 57456 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-13T14:20:35.749Z  INFO [server,,] 57456 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-13T14:20:35.960Z  WARN [server,,] 57456 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-13T14:20:35.998Z  INFO [server,,] 57456 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-01-13T14:20:36.372Z  INFO [server,,] 57456 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-01-13T14:20:36.372Z  INFO [server,,] 57456 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-01-13T14:20:36.376Z  INFO [server,,] 57456 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 0 endpoint(s) beneath base path '/actuator'
+2023-01-13T14:20:36.383Z  INFO [server,,] 57456 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 10 ms
+2023-01-13T14:20:36.417Z  INFO [server,,] 57456 --- [    Test worker] c.a.d.c.LeaguePositionControllerTests    : Started LeaguePositionControllerTests in 1.036 seconds (process running for 10.515)
+START data: get-league-table-given-name
+STOP: get-league-table-given-name response time: 9ms
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 3ms
+START data: get-league-table-given-name
+STOP: get-league-table-given-name response time: 10ms
+START data: update-league-table-given-match
+2023-01-13T14:20:36.547Z  INFO [server,,] 57456 --- [    Test worker] c.a.demo.services.LeaguePositionService  : Updating league table for match: Manchester United 2-0 Newcastle United, in league: Premier League
+STOP: update-league-table-given-match response time: 19ms
+START data: get-league-table-given-name
+STOP: get-league-table-given-name response time: 7ms
 </pre>
 </span>
 </div>
@@ -138,7 +151,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at 12 Jan 2023, 10:01:13</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at 13 Jan 2023, 14:20:38</p>
 </div>
 </div>
 </body>

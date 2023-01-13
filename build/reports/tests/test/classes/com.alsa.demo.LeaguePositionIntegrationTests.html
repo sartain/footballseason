@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.513s</div>
+<div class="counter">0.621s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,37 +79,37 @@
 </thead>
 <tr>
 <td class="success">failLeagueUpdateFalseLeagueName()</td>
-<td class="success">0.298s</td>
+<td class="success">0.344s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">failLeagueUpdateFalseTeamName()</td>
-<td class="success">0.018s</td>
+<td class="success">0.023s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">falseLeagueInPosition()</td>
-<td class="success">0.008s</td>
+<td class="success">0.016s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">falseTeamInPosition()</td>
-<td class="success">0.012s</td>
+<td class="success">0.019s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">retrieveLeagueGivenLeagueName()</td>
-<td class="success">0.017s</td>
+<td class="success">0.026s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">retrieveTeamInPosition()</td>
-<td class="success">0.012s</td>
+<td class="success">0.021s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">updateLeagueTable()</td>
-<td class="success">0.148s</td>
+<td class="success">0.172s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -117,15 +117,15 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>10:01:06.212 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [LeaguePositionIntegrationTests]: using SpringBootContextLoader
-10:01:06.218 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.alsa.demo.LeaguePositionIntegrationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-10:01:06.219 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.alsa.demo.LeaguePositionIntegrationTests]: LeaguePositionIntegrationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-10:01:06.240 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [LeaguePositionIntegrationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, WebTestClientContextCustomizer]
-10:01:06.299 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/alsa/Downloads/footballseason/build/classes/java/main/com/alsa/demo/LeaguesApplication.class]
-10:01:06.301 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.LeaguePositionIntegrationTests
-10:01:06.376 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [LeaguePositionIntegrationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
-10:01:06.377 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [LeaguePositionIntegrationTests], class annotated with @DirtiesContext [false] with mode [null]
-10:01:06.387 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.alsa.demo.LeaguePositionIntegrationTests
+<pre>14:20:26.823 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [LeaguePositionIntegrationTests]: using SpringBootContextLoader
+14:20:26.829 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.alsa.demo.LeaguePositionIntegrationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+14:20:26.830 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.alsa.demo.LeaguePositionIntegrationTests]: LeaguePositionIntegrationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:20:26.858 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [LeaguePositionIntegrationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, WebTestClientContextCustomizer]
+14:20:26.926 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/alsa/Downloads/footballseason/build/classes/java/main/com/alsa/demo/LeaguesApplication.class]
+14:20:26.927 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.LeaguePositionIntegrationTests
+14:20:27.021 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [LeaguePositionIntegrationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+14:20:27.023 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [LeaguePositionIntegrationTests], class annotated with @DirtiesContext [false] with mode [null]
+14:20:27.034 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.alsa.demo.LeaguePositionIntegrationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -135,32 +135,77 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.1)
 
-2023-01-12T10:01:06.603Z  INFO 11845 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : Starting LeaguePositionIntegrationTests using Java 17.0.3.1 with PID 11845 (started by alsa in /Users/alsa/Downloads/footballseason)
-2023-01-12T10:01:06.604Z  INFO 11845 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-01-12T10:01:07.200Z  INFO 11845 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-12T10:01:07.341Z  INFO 11845 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134 ms. Found 3 JPA repository interfaces.
-2023-01-12T10:01:07.800Z  INFO 11845 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2023-01-12T10:01:07.809Z  INFO 11845 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-12T10:01:07.810Z  INFO 11845 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
-2023-01-12T10:01:07.909Z  INFO 11845 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-12T10:01:07.913Z  INFO 11845 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1292 ms
-2023-01-12T10:01:08.032Z  INFO 11845 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-12T10:01:08.164Z  INFO 11845 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:73ee78d3-7cff-4923-8da4-e778d82fa867 user=SA
-2023-01-12T10:01:08.165Z  INFO 11845 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-12T10:01:08.195Z  INFO 11845 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-12T10:01:08.227Z  INFO 11845 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
-2023-01-12T10:01:08.338Z  WARN 11845 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-2023-01-12T10:01:08.446Z  INFO 11845 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-01-12T10:01:08.654Z  WARN 11845 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.alsa.demo.entities.LeaguePositionId
-2023-01-12T10:01:08.655Z  WARN 11845 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.alsa.demo.entities.LeaguePositionId
-2023-01-12T10:01:09.056Z  INFO 11845 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-12T10:01:09.062Z  INFO 11845 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-12T10:01:09.622Z  WARN 11845 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-12T10:01:10.513Z  INFO 11845 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 50944 (http) with context path ''
-2023-01-12T10:01:10.521Z  INFO 11845 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : Started LeaguePositionIntegrationTests in 4.111 seconds (process running for 5.036)
-2023-01-12T10:01:10.885Z  INFO 11845 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-12T10:01:10.885Z  INFO 11845 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-12T10:01:10.886Z  INFO 11845 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-01-13T14:20:27.316Z  INFO [server,,] 57456 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : Starting LeaguePositionIntegrationTests using Java 17.0.3.1 with PID 57456 (started by alsa in /Users/alsa/Downloads/footballseason)
+2023-01-13T14:20:27.318Z  INFO [server,,] 57456 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-01-13T14:20:28.181Z  INFO [server,,] 57456 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-13T14:20:28.322Z  INFO [server,,] 57456 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 132 ms. Found 3 JPA repository interfaces.
+2023-01-13T14:20:29.000Z  INFO [server,,] 57456 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-01-13T14:20:29.010Z  INFO [server,,] 57456 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-13T14:20:29.011Z  INFO [server,,] 57456 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-01-13T14:20:29.108Z  INFO [server,,] 57456 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-13T14:20:29.111Z  INFO [server,,] 57456 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1775 ms
+2023-01-13T14:20:29.360Z  INFO [server,,] 57456 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-13T14:20:29.538Z  INFO [server,,] 57456 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:e9cb8175-c5ae-45bb-b93e-7870021c6304 user=SA
+2023-01-13T14:20:29.540Z  INFO [server,,] 57456 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-13T14:20:29.584Z  INFO [server,,] 57456 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-13T14:20:29.627Z  INFO [server,,] 57456 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-13T14:20:29.766Z  WARN [server,,] 57456 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-13T14:20:29.876Z  INFO [server,,] 57456 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-13T14:20:30.141Z  WARN [server,,] 57456 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.alsa.demo.entities.LeaguePositionId
+2023-01-13T14:20:30.141Z  WARN [server,,] 57456 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.alsa.demo.entities.LeaguePositionId
+2023-01-13T14:20:30.623Z  INFO [server,,] 57456 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-13T14:20:30.630Z  INFO [server,,] 57456 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-13T14:20:31.787Z  WARN [server,,] 57456 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-13T14:20:31.931Z  INFO [server,,] 57456 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-01-13T14:20:32.975Z  INFO [server,,] 57456 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 0 endpoint(s) beneath base path '/actuator'
+2023-01-13T14:20:33.053Z  INFO [server,,] 57456 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 56929 (http) with context path ''
+2023-01-13T14:20:33.067Z  INFO [server,,] 57456 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : Started LeaguePositionIntegrationTests in 6.011 seconds (process running for 7.166)
+START data: http.client.requests
+2023-01-13T14:20:33.543Z  INFO [server,,] 57456 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-13T14:20:33.543Z  INFO [server,,] 57456 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-13T14:20:33.544Z  INFO [server,,] 57456 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+START data: update-league-table-given-match
+2023-01-13T14:20:33.580Z  INFO [server,,] 57456 --- [o-auto-1-exec-1] c.a.demo.services.LeaguePositionService  : Updating league table for match: Arsenal 2-0 Newcastle United, in league: Fake League
+ERROR data: null, error: com.alsa.demo.exceptions.LeagueNotFoundException: No League Found of name: Fake League
+STOP: update-league-table-given-match response time: 40ms
+STOP: http.client.requests response time: 83ms
+START data: http.client.requests
+START data: get-league-table-given-name
+STOP: get-league-table-given-name response time: 31ms
+STOP: http.client.requests response time: 81ms
+START data: http.client.requests
+START data: update-league-table-given-match
+2023-01-13T14:20:33.764Z  INFO [server,,] 57456 --- [o-auto-1-exec-3] c.a.demo.services.LeaguePositionService  : Updating league table for match: Manchester United 2-0 Newcastle United, in league: Premier League
+STOP: update-league-table-given-match response time: 58ms
+STOP: http.client.requests response time: 63ms
+START data: http.client.requests
+START data: get-league-table-given-name
+STOP: get-league-table-given-name response time: 12ms
+STOP: http.client.requests response time: 14ms
+START data: http.client.requests
+START data: update-league-table-given-match
+2023-01-13T14:20:33.853Z  INFO [server,,] 57456 --- [o-auto-1-exec-5] c.a.demo.services.LeaguePositionService  : Updating league table for match: Fake Name 2-0 Newcastle United, in league: Premier League
+ERROR data: null, error: com.alsa.demo.exceptions.TeamNotFoundException: No Team Found of name: Fake Name
+STOP: update-league-table-given-match response time: 10ms
+STOP: http.client.requests response time: 14ms
+START data: http.client.requests
+START data: get-league-table-given-name
+STOP: get-league-table-given-name response time: 13ms
+STOP: http.client.requests response time: 17ms
+START data: http.client.requests
+START data: get-league-position-given-team-and-league
+ERROR data: null, error: com.alsa.demo.exceptions.TeamNotFoundException: No Team Found of name: Fake Name
+STOP: get-league-position-given-team-and-league response time: 5ms
+STOP: http.client.requests response time: 8ms
+START data: http.client.requests
+START data: get-league-position-given-team-and-league
+STOP: get-league-position-given-team-and-league response time: 8ms
+STOP: http.client.requests response time: 13ms
+START data: http.client.requests
+START data: get-league-position-given-team-and-league
+ERROR data: null, error: com.alsa.demo.exceptions.LeagueNotFoundException: No League Found of name: Fake League
+STOP: get-league-position-given-team-and-league response time: 4ms
+STOP: http.client.requests response time: 8ms
 </pre>
 </span>
 </div>
@@ -172,7 +217,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at 12 Jan 2023, 10:01:13</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at 13 Jan 2023, 14:20:38</p>
 </div>
 </div>
 </body>

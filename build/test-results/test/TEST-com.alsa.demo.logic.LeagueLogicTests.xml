@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.alsa.demo.logic.LeagueLogicTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-01-12T10:01:12" hostname="Alexs-MacBook-Pro.local" time="0.007">
+<testsuite name="com.alsa.demo.logic.LeagueLogicTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-01-13T14:20:36" hostname="Alexs-MacBook-Pro.local" time="0.007">
   <properties/>
-  <testcase name="updateLeaguePositionVariableGivenResultUpdate()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.002"/>
-  <testcase name="updateLeaguePlacesGivenResultUpdateFromScoreLogic()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.001"/>
+  <testcase name="updateLeaguePositionVariableGivenResultUpdate()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.001"/>
+  <testcase name="updateLeaguePlacesGivenResultUpdateFromScoreLogic()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.002"/>
   <testcase name="updateLeagueGivenResultUpdate()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.001"/>
   <testcase name="updateLeaguePlacesGoalDifference()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.001"/>
-  <testcase name="updateSeveralLeaguePlaces()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.001"/>
-  <system-out><![CDATA[Position: 1, TeamID: com.alsa.demo.entities.Team@c7b276, GoalsFor: 24, GoalsAgainst: 19, Points: 43
-Position: 3, TeamID: com.alsa.demo.entities.Team@2d758834, GoalsFor: 18, GoalsAgainst: 21, Points: 38
-Position: 2, TeamID: com.alsa.demo.entities.Team@64010508, GoalsFor: 16, GoalsAgainst: 16, Points: 38
-Position: 4, TeamID: com.alsa.demo.entities.Team@4abfdad1, GoalsFor: 14, GoalsAgainst: 13, Points: 36
-Position: 2, TeamID: com.alsa.demo.entities.Team@77d695f2, GoalsFor: 20, GoalsAgainst: 19, Points: 40
-Position: 1, TeamID: com.alsa.demo.entities.Team@76639714, GoalsFor: 22, GoalsAgainst: 18, Points: 41
-Position: 3, TeamID: com.alsa.demo.entities.Team@1a26f595, GoalsFor: 16, GoalsAgainst: 16, Points: 38
-Position: 4, TeamID: com.alsa.demo.entities.Team@2e7bcd52, GoalsFor: 14, GoalsAgainst: 13, Points: 36
-Position: 3, TeamID: com.alsa.demo.entities.Team@6d41b46a, GoalsFor: 20, GoalsAgainst: 19, Points: 40
-Position: 2, TeamID: com.alsa.demo.entities.Team@7f055e1, GoalsFor: 22, GoalsAgainst: 18, Points: 41
-Position: 1, TeamID: com.alsa.demo.entities.Team@2a5782d7, GoalsFor: 41, GoalsAgainst: 17, Points: 41
-Position: 4, TeamID: com.alsa.demo.entities.Team@5ab6cb92, GoalsFor: 14, GoalsAgainst: 13, Points: 36
-Position: 2, TeamID: com.alsa.demo.entities.Team@3a34d64a, GoalsFor: 20, GoalsAgainst: 19, Points: 40
-Position: 3, TeamID: com.alsa.demo.entities.Team@3feec3b0, GoalsFor: 18, GoalsAgainst: 17, Points: 38
-Position: 1, TeamID: com.alsa.demo.entities.Team@2939bfa0, GoalsFor: 20, GoalsAgainst: 17, Points: 41
-Position: 4, TeamID: com.alsa.demo.entities.Team@45bf1b4e, GoalsFor: 14, GoalsAgainst: 13, Points: 36
+  <testcase name="updateSeveralLeaguePlaces()" classname="com.alsa.demo.logic.LeagueLogicTests" time="0.0"/>
+  <system-out><![CDATA[Position: 1, TeamID: com.alsa.demo.entities.Team@3d07c7aa, GoalsFor: 24, GoalsAgainst: 19, Points: 43
+Position: 3, TeamID: com.alsa.demo.entities.Team@1130cad1, GoalsFor: 18, GoalsAgainst: 21, Points: 38
+Position: 2, TeamID: com.alsa.demo.entities.Team@2e3f9d29, GoalsFor: 16, GoalsAgainst: 16, Points: 38
+Position: 4, TeamID: com.alsa.demo.entities.Team@1525f2da, GoalsFor: 14, GoalsAgainst: 13, Points: 36
+Position: 2, TeamID: com.alsa.demo.entities.Team@161c4d43, GoalsFor: 20, GoalsAgainst: 19, Points: 40
+Position: 1, TeamID: com.alsa.demo.entities.Team@16d7b13, GoalsFor: 22, GoalsAgainst: 18, Points: 41
+Position: 3, TeamID: com.alsa.demo.entities.Team@53e968c2, GoalsFor: 16, GoalsAgainst: 16, Points: 38
+Position: 4, TeamID: com.alsa.demo.entities.Team@69e0e347, GoalsFor: 14, GoalsAgainst: 13, Points: 36
+Position: 3, TeamID: com.alsa.demo.entities.Team@1de2cd6d, GoalsFor: 20, GoalsAgainst: 19, Points: 40
+Position: 2, TeamID: com.alsa.demo.entities.Team@77bd9821, GoalsFor: 22, GoalsAgainst: 18, Points: 41
+Position: 1, TeamID: com.alsa.demo.entities.Team@6f8a516c, GoalsFor: 41, GoalsAgainst: 17, Points: 41
+Position: 4, TeamID: com.alsa.demo.entities.Team@11e7d01, GoalsFor: 14, GoalsAgainst: 13, Points: 36
+Position: 2, TeamID: com.alsa.demo.entities.Team@a9c51ea, GoalsFor: 20, GoalsAgainst: 19, Points: 40
+Position: 3, TeamID: com.alsa.demo.entities.Team@11fbbc08, GoalsFor: 18, GoalsAgainst: 17, Points: 38
+Position: 1, TeamID: com.alsa.demo.entities.Team@2cc78e6a, GoalsFor: 20, GoalsAgainst: 17, Points: 41
+Position: 4, TeamID: com.alsa.demo.entities.Team@5ec30886, GoalsFor: 14, GoalsAgainst: 13, Points: 36
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
