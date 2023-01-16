@@ -2,6 +2,8 @@ package com.alsa.demo.controllers;
 
 import com.alsa.demo.entities.LeaguePosition;
 import com.alsa.demo.services.LeaguePositionService;
+import io.micrometer.observation.Observation;
+import io.micrometer.observation.ObservationRegistry;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,9 +14,12 @@ import java.util.Optional;
 
 @RestController
 public class LeaguePositionController {
+
+    private ObservationRegistry prometheusRegistry;
     private LeaguePositionService leaguePositionService;
 
-    public LeaguePositionController(LeaguePositionService leaguePositionService) {
+    public LeaguePositionController(ObservationRegistry registry, LeaguePositionService leaguePositionService) {
+        this.prometheusRegistry = registry;
         this.leaguePositionService = leaguePositionService;
     }
 
@@ -22,11 +27,17 @@ public class LeaguePositionController {
     public ResponseEntity<LeaguePosition> getLeaguePosition(
             @PathVariable String league,
             @PathVariable String team) {
-        try {
-            return ResponseEntity.of(leaguePositionService.getLeaguePositionGivenTeamInLeague(team, league));
+        Observation observation = Observation.start("getLeaguePositionGiveLeagueAndName", prometheusRegistry);
+        try (Observation.Scope scope = observation.openScope()){
+            Optional<LeaguePosition> response = leaguePositionService.getLeaguePositionGivenTeamInLeague(team, league);
+            return ResponseEntity.of(response);
         }
         catch(Exception e) {
+            observation.error(e);
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
+        }
+        finally {
+            observation.stop();
         }
     }
 

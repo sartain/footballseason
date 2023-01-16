@@ -46,9 +46,6 @@ public class LeaguePositionService {
         return leaguePositionDao.findById(new LeaguePositionId(t.get(), l.get()));
     }
 
-    @Observed(name = "get-league-position-given-team-and-league",
-            contextualName = "get-league-position",
-            lowCardinalityKeyValues = {"teamName", "Arsenal"})
     public Optional<LeaguePosition> getLeaguePositionGivenTeamInLeague(String teamName, String leagueName) throws LeagueNotFoundException, TeamNotFoundException, InterruptedException {
         Optional<Team> t = teamDao.findByName(teamName);
         Optional<League> l = leagueDao.findByName(leagueName);
@@ -60,16 +57,10 @@ public class LeaguePositionService {
             return leaguePositionDao.findById(new LeaguePositionId(t.get(), l.get()));
     }
 
-    @Observed(name = "get-league-table-given-id",
-            contextualName = "get-league-table",
-            lowCardinalityKeyValues = {"id", "1"})
     public List<LeaguePosition> getLeagueTable(int id) {
         return LeagueLogic.applyLeagueUpdate(leaguePositionDao.findAllByLeagueId(id));
     }
 
-    @Observed(name = "get-league-table-given-name",
-            contextualName = "receiving-league-table",
-            lowCardinalityKeyValues = {"leagueName", "Premier League"})
     public Optional<List<LeaguePosition>> getLeagueTableGivenName(String leagueName) throws LeagueNotFoundException {
         Optional<League> l = leagueDao.findByName(leagueName);
         if(l.isEmpty())
@@ -78,9 +69,6 @@ public class LeaguePositionService {
             return Optional.of(LeagueLogic.applyLeagueUpdate(leaguePositionDao.findAllByLeagueId(l.get().getId())));
     }
 
-    @Observed(name = "update-league-table-given-match",
-            contextualName = "updating-league-table",
-            lowCardinalityKeyValues = {"leagueName", "Premier League"})
     public void applyLeagueTableUpdateGivenScore(String match, String leagueName) throws TeamNotFoundException, LeagueNotFoundException {
         //Assumption is that this is premier league
         //Slightly inefficient as all teams in all positions are modified, not just ones referenced

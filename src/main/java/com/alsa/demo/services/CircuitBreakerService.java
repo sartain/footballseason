@@ -51,11 +51,6 @@ public class CircuitBreakerService {
 
     CircuitBreaker circuitBreaker;
 
-    @Observed(
-            name = "get-league-position-circuit-breaker",
-            contextualName = "",
-            lowCardinalityKeyValues = {"http.status", "Http.Status"}
-    )
     public Optional<LeaguePosition> getLeaguePositionGivenTeamAndLeagueNameWithBreaker(String teamName, String leagueName) {
         Supplier<Optional<LeaguePosition>> supplier = () -> client.get().uri("/"+leagueName+"/"+teamName)
                 .accept(MediaType.APPLICATION_JSON)
