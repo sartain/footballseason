@@ -29,7 +29,7 @@ public class LeaguePositionController {
     public ResponseEntity<LeaguePosition> getLeaguePosition(
             @PathVariable String league,
             @PathVariable String team) {
-        Observation.Context context = new Observation.Context().put(String.class, "get.league.position.given.league.and.team");
+        Observation.Context context = new Observation.Context().put(String.class, String.format("get.league.position.given.%s.and.%s", league, team));
         Observation observation = Observation.start("getLeaguePositionGiveLeagueAndName", () -> context, prometheusRegistry);
         try (Observation.Scope scope = observation.openScope()){
             Optional<LeaguePosition> response = leaguePositionService.getLeaguePositionGivenTeamInLeague(team, league);
