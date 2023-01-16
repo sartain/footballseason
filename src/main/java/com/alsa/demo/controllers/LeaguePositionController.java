@@ -1,5 +1,6 @@
 package com.alsa.demo.controllers;
 
+import com.alsa.demo.config.SimpleHandler;
 import com.alsa.demo.entities.LeaguePosition;
 import com.alsa.demo.services.LeaguePositionService;
 import io.micrometer.observation.Observation;
@@ -20,6 +21,7 @@ public class LeaguePositionController {
 
     public LeaguePositionController(ObservationRegistry registry, LeaguePositionService leaguePositionService) {
         this.prometheusRegistry = registry;
+        this.prometheusRegistry.observationConfig().observationHandler(new SimpleHandler());
         this.leaguePositionService = leaguePositionService;
     }
 
@@ -27,7 +29,8 @@ public class LeaguePositionController {
     public ResponseEntity<LeaguePosition> getLeaguePosition(
             @PathVariable String league,
             @PathVariable String team) {
-        Observation observation = Observation.start("getLeaguePositionGiveLeagueAndName", prometheusRegistry);
+        Observation.Context context = new Observation.Context().put(String.class, "get.league.position.given.league.and.team");
+        Observation observation = Observation.start("getLeaguePositionGiveLeagueAndName", () -> context, prometheusRegistry);
         try (Observation.Scope scope = observation.openScope()){
             Optional<LeaguePosition> response = leaguePositionService.getLeaguePositionGivenTeamInLeague(team, league);
             return ResponseEntity.of(response);
