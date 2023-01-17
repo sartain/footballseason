@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
@@ -17,6 +18,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -43,6 +45,7 @@ public class LeaguePositionControllerTests {
     }
 
     @Test
+    @WithUserDetails()
     void returnLeaguePositionGivenNameAndLeague() throws Exception {
         ResultActions resultActions = this.mockMvc.perform(get("/leagueposition/Premier League/Arsenal"))
                 .andExpect(status().isOk());
@@ -60,13 +63,14 @@ public class LeaguePositionControllerTests {
     }
 
     @Test
+    @WithUserDetails()
     void putResultUpdate() throws Exception {
         ResultActions getResultActions = this.mockMvc.perform(get("/leagueposition/Premier League"))
                 .andExpect(status().isOk());
         List<LeaguePosition> response = leaguePositionsFromResponse(getResultActions.andReturn());
         assertEquals("Manchester United", response.get(3).getTeam().getName());
         assertEquals("Newcastle United", response.get(2).getTeam().getName());
-        this.mockMvc.perform(post("/leagueposition/Premier League").content("Manchester United 2-0 Newcastle United"))
+        this.mockMvc.perform(post("/leagueposition/Premier League").with(csrf()).content("Manchester United 2-0 Newcastle United"))
                 .andExpect(status().isOk());
         getResultActions = this.mockMvc.perform(get("/leagueposition/Premier League"))
                 .andExpect(status().isOk());
