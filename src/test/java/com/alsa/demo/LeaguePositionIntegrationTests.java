@@ -1,14 +1,17 @@
 package com.alsa.demo;
 import com.alsa.demo.entities.LeaguePosition;
+import jakarta.servlet.ServletRequest;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+import org.springframework.security.web.csrf.CsrfTokenRepository;
+import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 
+import java.net.URI;
 import java.util.Arrays;
 import java.util.List;
 
@@ -87,8 +90,19 @@ public class LeaguePositionIntegrationTests {
 
     @Test
     public void failLeagueUpdateFalseLeagueName() {
+        ResponseEntity<LeaguePosition[]> getResponse = restTemplate.getForEntity("/leagueposition/Premier League", LeaguePosition[].class);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.TEXT_PLAIN);
+        headers.setBasicAuth("user", "password");
+        HttpEntity<String> entity = new HttpEntity<>("Arsenal 2-0 Newcastle United", headers);
+        ResponseEntity<String> postResponse = restTemplate.postForEntity("/leagueposition/Fake League", entity, String.class);
+        assertEquals(HttpStatus.NOT_FOUND, postResponse.getStatusCode());
+        assert(postResponse.getBody().contains("Fake League"));
+        /*
         ResponseEntity<String> postResponse = restTemplate.postForEntity("/leagueposition/Fake League", "Arsenal 2-0 Newcastle United", String.class);
         assertEquals(postResponse.getStatusCode(), HttpStatus.NOT_FOUND);
         assert(postResponse.getBody().contains("Fake League"));
+        ERROR data: null, error: org.springframework.security.web.csrf.InvalidCsrfTokenException: Invalid CSRF Token 'null' was found on the request parameter '_csrf' or header 'X-XSRF-TOKEN'.
+         */
     }
 }

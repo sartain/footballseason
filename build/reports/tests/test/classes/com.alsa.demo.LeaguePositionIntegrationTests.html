@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.177s</div>
+<div class="counter">0.533s</div>
 <p>duration</p>
 </div>
 </td>
@@ -76,63 +76,68 @@
 <a name="failLeagueUpdateFalseLeagueName()"></a>
 <h3 class="failures">failLeagueUpdateFalseLeagueName()</h3>
 <span class="code">
-<pre>java.lang.NullPointerException: Cannot invoke &quot;org.springframework.security.web.csrf.CsrfTokenRepository.generateToken(jakarta.servlet.http.HttpServletRequest)&quot; because &quot;com.alsa.demo.config.TestAuthentication.csrfTokenRepository&quot; is null
-	at com.alsa.demo.config.TestAuthentication.csrfHeaders(TestAuthentication.java:27)
-	at com.alsa.demo.LeaguePositionIntegrationTests.failLeagueUpdateFalseLeagueName(LeaguePositionIntegrationTests.java:91)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+<pre>org.opentest4j.AssertionFailedError: expected: &lt;404 NOT_FOUND&gt; but was: &lt;403 FORBIDDEN&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1142)
+	at app//com.alsa.demo.LeaguePositionIntegrationTests.failLeagueUpdateFalseLeagueName(LeaguePositionIntegrationTests.java:100)
+	at java.base@17.0.3.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.3.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.3.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.3.1/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at app//org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at app//org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at app//org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at app//org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at app//org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.3.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base@17.0.3.1/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
 	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
 	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
 	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
@@ -146,10 +151,10 @@
 	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
 	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base@17.0.3.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.3.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.3.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.3.1/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
 	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
@@ -162,8 +167,8 @@
 	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </pre>
 </span>
 </div>
@@ -180,7 +185,7 @@
 </thead>
 <tr>
 <td class="failures">failLeagueUpdateFalseLeagueName()</td>
-<td class="failures">0.177s</td>
+<td class="failures">0.533s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -188,15 +193,15 @@
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>17:13:51.921 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [LeaguePositionIntegrationTests]: using SpringBootContextLoader
-17:13:51.927 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.alsa.demo.LeaguePositionIntegrationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-17:13:51.927 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.alsa.demo.LeaguePositionIntegrationTests]: LeaguePositionIntegrationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-17:13:51.955 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [LeaguePositionIntegrationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, WebTestClientContextCustomizer]
-17:13:52.039 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/alsa/Downloads/footballseason/build/classes/java/main/com/alsa/demo/LeaguesApplication.class]
-17:13:52.040 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.LeaguePositionIntegrationTests
-17:13:52.144 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [LeaguePositionIntegrationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, WithSecurityContextTestExecutionListener, EventPublishingTestExecutionListener, ReactorContextTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
-17:13:52.145 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [LeaguePositionIntegrationTests], class annotated with @DirtiesContext [false] with mode [null]
-17:13:52.156 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.alsa.demo.LeaguePositionIntegrationTests
+<pre>10:41:37.609 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [LeaguePositionIntegrationTests]: using SpringBootContextLoader
+10:41:37.614 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.alsa.demo.LeaguePositionIntegrationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+10:41:37.614 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.alsa.demo.LeaguePositionIntegrationTests]: LeaguePositionIntegrationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+10:41:37.636 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [LeaguePositionIntegrationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer, WebTestClientContextCustomizer]
+10:41:37.697 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/alsa/Downloads/footballseason/build/classes/java/main/com/alsa/demo/LeaguesApplication.class]
+10:41:37.698 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.alsa.demo.LeaguesApplication for test class com.alsa.demo.LeaguePositionIntegrationTests
+10:41:37.773 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [LeaguePositionIntegrationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, WithSecurityContextTestExecutionListener, EventPublishingTestExecutionListener, ReactorContextTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+10:41:37.774 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [LeaguePositionIntegrationTests], class annotated with @DirtiesContext [false] with mode [null]
+10:41:37.784 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test class com.alsa.demo.LeaguePositionIntegrationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -206,32 +211,116 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.1)
 
-2023-01-17T17:13:52.473Z  INFO [server,,] 73489 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : Starting LeaguePositionIntegrationTests using Java 17.0.3.1 with PID 73489 (started by alsa in /Users/alsa/Downloads/footballseason)
-2023-01-17T17:13:52.474Z  INFO [server,,] 73489 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-01-17T17:13:53.273Z  INFO [server,,] 73489 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-17T17:13:53.418Z  INFO [server,,] 73489 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 137 ms. Found 3 JPA repository interfaces.
-2023-01-17T17:13:54.053Z  INFO [server,,] 73489 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2023-01-17T17:13:54.061Z  INFO [server,,] 73489 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-17T17:13:54.062Z  INFO [server,,] 73489 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
-2023-01-17T17:13:54.143Z  INFO [server,,] 73489 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-17T17:13:54.144Z  INFO [server,,] 73489 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1650 ms
-2023-01-17T17:13:54.394Z  INFO [server,,] 73489 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-17T17:13:54.556Z  INFO [server,,] 73489 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:61d0af53-3cbb-4502-a6d3-449cddaf289b user=SA
-2023-01-17T17:13:54.557Z  INFO [server,,] 73489 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-17T17:13:54.595Z  INFO [server,,] 73489 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-17T17:13:54.643Z  INFO [server,,] 73489 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
-2023-01-17T17:13:54.760Z  WARN [server,,] 73489 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-2023-01-17T17:13:54.870Z  INFO [server,,] 73489 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-01-17T17:13:55.094Z  WARN [server,,] 73489 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.alsa.demo.entities.LeaguePositionId
-2023-01-17T17:13:55.095Z  WARN [server,,] 73489 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.alsa.demo.entities.LeaguePositionId
-2023-01-17T17:13:55.565Z  INFO [server,,] 73489 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-17T17:13:55.574Z  INFO [server,,] 73489 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-17T17:13:56.697Z  WARN [server,,] 73489 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-17T17:13:56.852Z  INFO [server,,] 73489 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@740610a2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6bfa228c, org.springframework.security.web.context.SecurityContextHolderFilter@c5dc3db, org.springframework.security.web.header.HeaderWriterFilter@1cfa5e46, org.springframework.security.web.csrf.CsrfFilter@358caf3a, org.springframework.security.web.authentication.logout.LogoutFilter@2cf073da, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@14b53f58, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3699c795, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21e72fb2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b351a54, org.springframework.security.web.access.ExceptionTranslationFilter@32e0b990]
-2023-01-17T17:13:57.036Z  INFO [server,,] 73489 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
-2023-01-17T17:13:57.308Z  INFO [server,,] 73489 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 0 endpoint(s) beneath base path '/actuator'
-2023-01-17T17:13:57.399Z  INFO [server,,] 73489 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55979 (http) with context path ''
-2023-01-17T17:13:57.410Z  INFO [server,,] 73489 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : Started LeaguePositionIntegrationTests in 5.224 seconds (process running for 6.182)
+2023-01-18T10:41:38.008Z  INFO [server,,] 85607 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : Starting LeaguePositionIntegrationTests using Java 17.0.3.1 with PID 85607 (started by alsa in /Users/alsa/Downloads/footballseason)
+2023-01-18T10:41:38.009Z  INFO [server,,] 85607 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-01-18T10:41:38.724Z  INFO [server,,] 85607 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-18T10:41:38.858Z  INFO [server,,] 85607 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 126 ms. Found 3 JPA repository interfaces.
+2023-01-18T10:41:39.458Z  INFO [server,,] 85607 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-01-18T10:41:39.467Z  INFO [server,,] 85607 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-18T10:41:39.467Z  INFO [server,,] 85607 --- [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-01-18T10:41:39.553Z  INFO [server,,] 85607 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-18T10:41:39.555Z  INFO [server,,] 85607 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1530 ms
+2023-01-18T10:41:39.776Z  INFO [server,,] 85607 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-18T10:41:39.914Z  INFO [server,,] 85607 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:550725ea-eae7-43ba-bd2e-512f4f387e88 user=SA
+2023-01-18T10:41:39.916Z  INFO [server,,] 85607 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-18T10:41:39.948Z  INFO [server,,] 85607 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-18T10:41:39.986Z  INFO [server,,] 85607 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-01-18T10:41:40.101Z  WARN [server,,] 85607 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-01-18T10:41:40.205Z  INFO [server,,] 85607 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-01-18T10:41:40.423Z  WARN [server,,] 85607 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.alsa.demo.entities.LeaguePositionId
+2023-01-18T10:41:40.424Z  WARN [server,,] 85607 --- [    Test worker] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.alsa.demo.entities.LeaguePositionId
+2023-01-18T10:41:40.918Z  INFO [server,,] 85607 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-18T10:41:40.928Z  INFO [server,,] 85607 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-18T10:41:42.143Z  WARN [server,,] 85607 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-18T10:41:42.294Z  INFO [server,,] 85607 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6f67291f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1243ad9a, org.springframework.security.web.context.SecurityContextHolderFilter@358caf3a, org.springframework.security.web.header.HeaderWriterFilter@5a2e4e77, org.springframework.security.web.csrf.CsrfFilter@6a8a54f5, org.springframework.security.web.authentication.logout.LogoutFilter@ef09e1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4f2ab774, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7acb8e6b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@29e40db1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30c085f3, org.springframework.security.web.access.ExceptionTranslationFilter@1d07fb2]
+2023-01-18T10:41:42.469Z  INFO [server,,] 85607 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-01-18T10:41:42.723Z  INFO [server,,] 85607 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 0 endpoint(s) beneath base path '/actuator'
+2023-01-18T10:41:42.801Z  INFO [server,,] 85607 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 52562 (http) with context path ''
+2023-01-18T10:41:42.813Z  INFO [server,,] 85607 --- [    Test worker] c.a.demo.LeaguePositionIntegrationTests  : Started LeaguePositionIntegrationTests in 5.007 seconds (process running for 5.9)
+START data: null
+2023-01-18T10:41:43.340Z  INFO [server,,] 85607 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-18T10:41:43.340Z  INFO [server,,] 85607 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-18T10:41:43.342Z  INFO [server,,] 85607 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+START data: null
+START data: null
+EVENT event: event.name='DisableEncodeUrlFilter before', event.contextualName='DisableEncodeUrlFilter before' data: null
+EVENT event: event.name='WebAsyncManagerIntegrationFilter before', event.contextualName='WebAsyncManagerIntegrationFilter before' data: null
+EVENT event: event.name='SecurityContextHolderFilter before', event.contextualName='SecurityContextHolderFilter before' data: null
+EVENT event: event.name='HeaderWriterFilter before', event.contextualName='HeaderWriterFilter before' data: null
+EVENT event: event.name='CsrfFilter before', event.contextualName='CsrfFilter before' data: null
+EVENT event: event.name='LogoutFilter before', event.contextualName='LogoutFilter before' data: null
+EVENT event: event.name='BasicAuthenticationFilter before', event.contextualName='BasicAuthenticationFilter before' data: null
+EVENT event: event.name='RequestCacheAwareFilter before', event.contextualName='RequestCacheAwareFilter before' data: null
+EVENT event: event.name='SecurityContextHolderAwareRequestFilter before', event.contextualName='SecurityContextHolderAwareRequestFilter before' data: null
+EVENT event: event.name='AnonymousAuthenticationFilter before', event.contextualName='AnonymousAuthenticationFilter before' data: null
+EVENT event: event.name='ExceptionTranslationFilter before', event.contextualName='ExceptionTranslationFilter before' data: null
+STOP  data: null
+START data: null
+STOP  data: null
+START data: null
+EVENT event: event.name='ExceptionTranslationFilter after', event.contextualName='ExceptionTranslationFilter after' data: null
+EVENT event: event.name='AnonymousAuthenticationFilter after', event.contextualName='AnonymousAuthenticationFilter after' data: null
+EVENT event: event.name='SecurityContextHolderAwareRequestFilter after', event.contextualName='SecurityContextHolderAwareRequestFilter after' data: null
+EVENT event: event.name='RequestCacheAwareFilter after', event.contextualName='RequestCacheAwareFilter after' data: null
+EVENT event: event.name='BasicAuthenticationFilter after', event.contextualName='BasicAuthenticationFilter after' data: null
+EVENT event: event.name='LogoutFilter after', event.contextualName='LogoutFilter after' data: null
+EVENT event: event.name='CsrfFilter after', event.contextualName='CsrfFilter after' data: null
+EVENT event: event.name='HeaderWriterFilter after', event.contextualName='HeaderWriterFilter after' data: null
+EVENT event: event.name='SecurityContextHolderFilter after', event.contextualName='SecurityContextHolderFilter after' data: null
+EVENT event: event.name='WebAsyncManagerIntegrationFilter after', event.contextualName='WebAsyncManagerIntegrationFilter after' data: null
+EVENT event: event.name='DisableEncodeUrlFilter after', event.contextualName='DisableEncodeUrlFilter after' data: null
+STOP  data: null
+STOP  data: null
+STOP  data: null
+CSRF TOKEN: null
+CSRF TOKEN 2: null
+START data: null
+START data: null
+START data: null
+EVENT event: event.name='DisableEncodeUrlFilter before', event.contextualName='DisableEncodeUrlFilter before' data: null
+EVENT event: event.name='WebAsyncManagerIntegrationFilter before', event.contextualName='WebAsyncManagerIntegrationFilter before' data: null
+EVENT event: event.name='SecurityContextHolderFilter before', event.contextualName='SecurityContextHolderFilter before' data: null
+EVENT event: event.name='HeaderWriterFilter before', event.contextualName='HeaderWriterFilter before' data: null
+EVENT event: event.name='CsrfFilter before', event.contextualName='CsrfFilter before' data: null
+ERROR data: null, error: org.springframework.security.web.csrf.MissingCsrfTokenException: Could not verify the provided CSRF token because no token was found to compare.
+STOP  data: null
+START data: null
+EVENT event: event.name='CsrfFilter after', event.contextualName='CsrfFilter after' data: null
+EVENT event: event.name='HeaderWriterFilter after', event.contextualName='HeaderWriterFilter after' data: null
+EVENT event: event.name='SecurityContextHolderFilter after', event.contextualName='SecurityContextHolderFilter after' data: null
+EVENT event: event.name='WebAsyncManagerIntegrationFilter after', event.contextualName='WebAsyncManagerIntegrationFilter after' data: null
+EVENT event: event.name='DisableEncodeUrlFilter after', event.contextualName='DisableEncodeUrlFilter after' data: null
+STOP  data: null
+STOP  data: null
+START data: null
+EVENT event: event.name='DisableEncodeUrlFilter before', event.contextualName='DisableEncodeUrlFilter before' data: null
+EVENT event: event.name='WebAsyncManagerIntegrationFilter before', event.contextualName='WebAsyncManagerIntegrationFilter before' data: null
+EVENT event: event.name='SecurityContextHolderFilter before', event.contextualName='SecurityContextHolderFilter before' data: null
+EVENT event: event.name='HeaderWriterFilter before', event.contextualName='HeaderWriterFilter before' data: null
+EVENT event: event.name='CsrfFilter before', event.contextualName='CsrfFilter before' data: null
+EVENT event: event.name='LogoutFilter before', event.contextualName='LogoutFilter before' data: null
+EVENT event: event.name='BasicAuthenticationFilter before', event.contextualName='BasicAuthenticationFilter before' data: null
+EVENT event: event.name='RequestCacheAwareFilter before', event.contextualName='RequestCacheAwareFilter before' data: null
+EVENT event: event.name='SecurityContextHolderAwareRequestFilter before', event.contextualName='SecurityContextHolderAwareRequestFilter before' data: null
+EVENT event: event.name='AnonymousAuthenticationFilter before', event.contextualName='AnonymousAuthenticationFilter before' data: null
+EVENT event: event.name='ExceptionTranslationFilter before', event.contextualName='ExceptionTranslationFilter before' data: null
+STOP  data: null
+START data: null
+STOP  data: null
+START data: null
+EVENT event: event.name='ExceptionTranslationFilter after', event.contextualName='ExceptionTranslationFilter after' data: null
+EVENT event: event.name='AnonymousAuthenticationFilter after', event.contextualName='AnonymousAuthenticationFilter after' data: null
+EVENT event: event.name='SecurityContextHolderAwareRequestFilter after', event.contextualName='SecurityContextHolderAwareRequestFilter after' data: null
+EVENT event: event.name='RequestCacheAwareFilter after', event.contextualName='RequestCacheAwareFilter after' data: null
+EVENT event: event.name='BasicAuthenticationFilter after', event.contextualName='BasicAuthenticationFilter after' data: null
+EVENT event: event.name='LogoutFilter after', event.contextualName='LogoutFilter after' data: null
+EVENT event: event.name='CsrfFilter after', event.contextualName='CsrfFilter after' data: null
+EVENT event: event.name='HeaderWriterFilter after', event.contextualName='HeaderWriterFilter after' data: null
+EVENT event: event.name='SecurityContextHolderFilter after', event.contextualName='SecurityContextHolderFilter after' data: null
+EVENT event: event.name='WebAsyncManagerIntegrationFilter after', event.contextualName='WebAsyncManagerIntegrationFilter after' data: null
+EVENT event: event.name='DisableEncodeUrlFilter after', event.contextualName='DisableEncodeUrlFilter after' data: null
+STOP  data: null
+STOP  data: null
 </pre>
 </span>
 </div>
@@ -243,7 +332,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at 17 Jan 2023, 17:14:00</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at 18 Jan 2023, 10:41:45</p>
 </div>
 </div>
 </body>

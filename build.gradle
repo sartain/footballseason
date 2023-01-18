@@ -27,6 +27,7 @@ dependencies {
 	testImplementation 'io.projectreactor:reactor-test'
 	testImplementation 'io.micrometer:micrometer-observation-test'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 }
