@@ -7,9 +7,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.stereotype.Component;
+import org.yaml.snakeyaml.util.UriEncoder;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -18,15 +20,17 @@ import static org.springframework.security.config.Customizer.withDefaults;
 public class SecurityConfig {
 
     @Bean
-    public UserDetailsService users() {
+    public UserDetailsService users() throws Exception {
         UserDetails user = User.builder()
                 .username("user")
-                .password("{bcrypt}$2a$10$h/AJueu7Xt9yh3qYuAXtk.WZJ544Uc2kdOKlHu2qQzCh/A3rq46qm")
+                .password("password")
+                .passwordEncoder(UriEncoder::encode)
                 .roles("USER")
                 .build();
         UserDetails admin = User.builder()
                 .username("admin")
-                .password("{bcrypt}$2a$10$h/AJueu7Xt9yh3qYuAXtk.WZJ544Uc2kdOKlHu2qQzCh/A3rq46qm")
+                .password("password")
+                .passwordEncoder(UriEncoder::encode)
                 .roles("USER", "ADMIN")
                 .build();
         return new InMemoryUserDetailsManager(user, admin);
@@ -37,7 +41,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests()
                 .requestMatchers(HttpMethod.GET).permitAll()
-                .requestMatchers(HttpMethod.POST).authenticated()
+                .requestMatchers(HttpMethod.POST).permitAll()
                 .and()
                 .httpBasic(withDefaults());
         return http.build();

@@ -7,6 +7,7 @@
 - Data Storage with [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
 - Fault Tolerance with [Resilience4j](https://resilience4j.readme.io)
 - Observability with [Prometheus + more](https://spring.io/blog/2022/10/12/observability-with-spring-boot-3)
+- Security with [BasicAuth + CSRF considerations](https://learning.oreilly.com/library/view/spring-security-in/9781617297731/OEBPS/Text/10.htm#heading_id_5)
 <!--End of list-->
 ### The API contains endpoints to:
 - Create and Read a Team
