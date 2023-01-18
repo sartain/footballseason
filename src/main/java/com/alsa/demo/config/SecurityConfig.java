@@ -47,8 +47,8 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests()
-                .requestMatchers(HttpMethod.GET).authenticated()
-                .requestMatchers(HttpMethod.POST).permitAll()
+                .requestMatchers(HttpMethod.GET).permitAll()
+                .requestMatchers(HttpMethod.POST).authenticated()
                 .and()
                 .httpBasic(withDefaults());
         return http.build();
